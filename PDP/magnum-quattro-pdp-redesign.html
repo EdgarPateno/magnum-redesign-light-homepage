@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magnum Quattro — 4-Source Protein Isolate | Magnum Supps</title>
+<meta name="description" content="Magnum Quattro: a 4-source time-released protein isolate blend. 30g protein, zero bloat, lactose-friendly. Subscribe & save 15%.">
+
+<!--
+=====================================================================
+ AUDIT COVERAGE MAP — every recommendation in the CRO audit is built
+ in. IDs let you verify nothing was skipped.
+---------------------------------------------------------------------
+ 1  Above the Fold .................. #buybox  (gallery, title, subtitle,
+       flavor+size swatches w/ OOS handling, price + compare-at +
+       per-serving, primary CTA, S&S DEFAULT ON + flexibility, rating ATF,
+       trust microcopy under CTA)
+ 2  Image Gallery ................... #gallery (multi-image, zoom lightbox,
+       VIDEO slide, lifestyle+product, mobile swipe + dots)
+ 3  Benefit / Hook ................... #benefits (outcome-led bullets)
+ 4  Ingredient Transparency ......... #ingredients (key-ingredient callout
+       cards w/ dose+why, STRUCTURED supplement-facts table + image,
+       certification badges)
+ 5  Social Proof .................... #reviews (count, star breakdown,
+       filters, UGC photos, verified-buyer, Q&A, video testimonial)
+ 6  Upsell / Cross-sell / Bundle .... #stack (Complete Your Stack w/ real
+       % discount) + #related (related products)
+ 7  Sticky Add-to-Cart Bar .......... #stickyAtc (thumb + price + variant)
+ 8  Subscription / Recurring ........ #subscribe block in buybox + #sub-detail
+       (discount + skip/pause/cancel flexibility)
+ 9  Trust & Risk Reversal ........... #trustbar + #guarantee (money-back,
+       free-ship $100 threshold, certs, as-low-as $/serving)
+ 10 Educational / Content ........... #howto, #science, #faq, #journal links
+ 11 Mobile .......................... sticky bottom CTA (thumb zone),
+       gallery swipe, accordions, responsive 375/768/1024/1440,
+       prefers-reduced-motion, 44px targets, focus rings
+ +  Back-in-stock capture ........... OOS flavor swaps CTA for Notify-Me
+=====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ECECEC; --surface:#FFFFFF; --ink:#0A0A0A; --muted:#5C5C5C;
+  --line:#E1E1E1; --line-2:#D2D2D2; --gold:#F2A900; --gold-deep:#C98A00;
+  --red:#D11F2D; --green:#1E8E3E; --green-bg:#E7F4EC;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.08); --shadow:0 8px 30px rgba(0,0,0,.10);
+  --shadow-lg:0 24px 60px rgba(0,0,0,.18);
+  --display:'Anton',sans-serif; --cond:'Barlow Condensed',sans-serif;
+  --body:'Barlow',Helvetica,Arial,sans-serif;
+  --r:14px; --maxw:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);
+  line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--body);cursor:pointer;border:none;background:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+h1,h2,h3{line-height:1.02;letter-spacing:.01em}
+.eyebrow{font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  letter-spacing:.14em;font-size:13px;color:var(--gold-deep)}
+.sec-title{font-family:var(--display);text-transform:uppercase;
+  font-size:clamp(2rem,5vw,3.4rem);line-height:.92;letter-spacing:.005em}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* ============ ANNOUNCEMENT + HEADER ============ */
+.announce{background:var(--ink);color:#fff;text-align:center;
+  font-family:var(--cond);font-weight:700;text-transform:uppercase;
+  letter-spacing:.12em;font-size:13px;padding:9px 12px}
+.announce b{color:var(--gold)}
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;
+  height:64px;gap:18px}
+.nav img{height:26px;width:auto}
+.nav nav{display:flex;gap:26px;font-family:var(--cond);font-weight:700;
+  text-transform:uppercase;letter-spacing:.08em;font-size:15px}
+.nav nav a:hover{color:var(--red)}
+.nav-ic{display:flex;gap:8px}
+.icbtn{width:44px;height:44px;display:grid;place-items:center;border-radius:10px}
+.icbt:hover,.icbtn:hover{background:var(--bg)}
+@media(max-width:860px){.nav nav{display:none}}
+
+/* ============ BREADCRUMB ============ */
+.crumb{font-family:var(--cond);font-weight:600;text-transform:uppercase;
+  letter-spacing:.08em;font-size:12.5px;color:var(--muted);padding:14px 0 4px}
+.crumb a:hover{color:var(--ink)}
+
+/* ============ BUYBOX (ABOVE THE FOLD) ============ */
+#buybox{padding:8px 0 34px}
+.buy-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:46px;align-items:start}
+@media(max-width:960px){.buy-grid{grid-template-columns:1fr;gap:26px}}
+
+/* gallery */
+#gallery{position:sticky;top:78px}
+@media(max-width:960px){#gallery{position:static}}
+.stage{position:relative;background:var(--surface);border-radius:var(--r);
+  border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow-sm)}
+.stage .slide{display:none;aspect-ratio:1/1;width:100%}
+.stage .slide.on{display:block}
+.stage .slide img{width:100%;height:100%;object-fit:contain;padding:14px}
+.stage .slide.lifestyle img{object-fit:cover;padding:0}
+.zoom-hint{position:absolute;top:12px;right:12px;background:rgba(10,10,10,.78);
+  color:#fff;font-family:var(--cond);font-weight:700;text-transform:uppercase;
+  letter-spacing:.08em;font-size:11px;padding:6px 10px;border-radius:20px;
+  display:flex;gap:6px;align-items:center;pointer-events:none}
+.badge-stack{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:7px}
+.flag{font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  letter-spacing:.06em;font-size:11.5px;padding:6px 11px;border-radius:6px;color:#fff}
+.flag.gold{background:var(--gold);color:#0A0A0A}
+.flag.red{background:var(--red)}
+.arrows{position:absolute;top:50%;transform:translateY(-50%);width:100%;
+  display:flex;justify-content:space-between;padding:0 8px;pointer-events:none}
+.arrows button{pointer-events:auto;width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.9);box-shadow:var(--shadow-sm);display:grid;
+  place-items:center;font-size:18px;color:var(--ink)}
+.arrows button:hover{background:#fff}
+.play-ov{position:absolute;inset:0;display:grid;place-items:center;
+  background:rgba(10,10,10,.28)}
+.play-ov .pbtn{width:74px;height:74px;border-radius:50%;background:var(--gold);
+  display:grid;place-items:center;box-shadow:var(--shadow)}
+.play-ov .pbtn svg{margin-left:5px}
+.vid-cap{position:absolute;bottom:14px;left:14px;color:#fff;font-family:var(--cond);
+  font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:13px;
+  text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.thumbs{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.thumbs button{width:70px;height:70px;border-radius:10px;border:2px solid var(--line);
+  background:var(--surface);overflow:hidden;padding:3px;position:relative}
+.thumbs button.on{border-color:var(--ink)}
+.thumbs img{width:100%;height:100%;object-fit:contain}
+.thumbs .vid-t::after{content:"";position:absolute;inset:0;background:rgba(10,10,10,.35)}
+.thumbs .vid-t .tri{position:absolute;inset:0;display:grid;place-items:center;z-index:2}
+.dots{display:none;gap:7px;justify-content:center;margin-top:12px}
+.dots span{width:8px;height:8px;border-radius:50%;background:var(--line-2)}
+.dots span.on{background:var(--ink)}
+@media(max-width:560px){.thumbs{display:none}.dots{display:flex}}
+
+/* product info */
+.brandline{font-family:var(--cond);font-weight:700;text-transform:uppercase;
+  letter-spacing:.14em;font-size:14px;color:var(--muted)}
+.ptitle{font-family:var(--display);text-transform:uppercase;
+  font-size:clamp(2.6rem,7vw,4.6rem);line-height:.86;margin:4px 0 6px}
+.psub{font-family:var(--cond);font-weight:600;font-size:19px;color:var(--ink);
+  text-transform:uppercase;letter-spacing:.02em;margin-bottom:14px}
+.psub b{color:var(--red)}
+
+/* rating ATF */
+.rating{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.stars{color:var(--gold);font-size:19px;letter-spacing:2px}
+.rating a{font-weight:700;border-bottom:2px solid var(--gold);padding-bottom:1px}
+.rating .vb{font-size:13.5px;color:var(--muted);font-weight:600}
+
+/* benefit chips (hook) */
+#benefits{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}
+.chip{display:flex;align-items:center;gap:7px;background:var(--surface);
+  border:1px solid var(--line);border-radius:30px;padding:8px 13px;
+  font-family:var(--cond);font-weight:700;text-transform:uppercase;
+  letter-spacing:.04em;font-size:13px}
+.chip svg{color:var(--green);flex:none}
+
+/* variant selectors */
+.vlabel{font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  letter-spacing:.08em;font-size:13px;margin:0 0 9px;display:flex;
+  justify-content:space-between;align-items:center}
+.vlabel .sel{color:var(--muted);font-weight:600}
+.swatches{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:20px}
+.sw{position:relative;border:2px solid var(--line-2);background:var(--surface);
+  border-radius:10px;padding:11px 15px;font-family:var(--cond);font-weight:700;
+  text-transform:uppercase;letter-spacing:.03em;font-size:14px;min-height:46px;
+  display:flex;align-items:center;gap:9px;transition:border-color .18s,background .18s}
+.sw:hover{border-color:var(--ink)}
+.sw.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.sw .dot{width:16px;height:16px;border-radius:50%;border:1px solid rgba(0,0,0,.15);flex:none}
+.sw.oos{color:var(--muted);border-style:dashed;cursor:pointer}
+.sw.oos .dot{opacity:.4}
+.sw.oos::after{content:"Sold out";position:absolute;top:-9px;right:8px;
+  background:var(--muted);color:#fff;font-size:9.5px;padding:2px 6px;border-radius:10px;
+  letter-spacing:.05em}
+.sw.size{min-width:96px;flex-direction:column;align-items:flex-start;gap:1px;line-height:1.1}
+.sw.size small{font-family:var(--body);font-weight:600;font-size:11.5px;
+  text-transform:none;letter-spacing:0;opacity:.7}
+
+/* purchase mode (subscription DEFAULT ON) */
+.modes{border:1px solid var(--line-2);border-radius:var(--r);overflow:hidden;margin-bottom:18px}
+.mode{display:flex;gap:13px;align-items:flex-start;padding:15px 16px;cursor:pointer;
+  border-bottom:1px solid var(--line)}
+.mode:last-child{border-bottom:none}
+.mode.on{background:#FFFCF2}
+.mode .radio{width:22px;height:22px;border-radius:50%;border:2px solid var(--line-2);
+  flex:none;margin-top:2px;display:grid;place-items:center;transition:.18s}
+.mode.on .radio{border-color:var(--gold-deep)}
+.mode.on .radio::after{content:"";width:11px;height:11px;border-radius:50%;background:var(--gold-deep)}
+.mode .body{flex:1}
+.mode .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.mode .name{font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  letter-spacing:.05em;font-size:16px}
+.mode .save-tag{background:var(--green-bg);color:var(--green);font-weight:800;
+  font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;border-radius:6px}
+.mode .price-now{font-family:var(--cond);font-weight:800;font-size:20px}
+.mode .price-now s{color:var(--muted);font-weight:600;font-size:15px;margin-right:6px}
+.mode .meta{font-size:13.5px;color:var(--muted);margin-top:3px}
+.mode .perserv{font-size:12.5px;color:var(--green);font-weight:700;margin-top:2px}
+.freq{margin:10px 0 2px;display:none}
+.mode.on .freq{display:block}
+.freq select{width:100%;padding:11px 12px;border:1px solid var(--line-2);border-radius:9px;
+  font-family:var(--body);font-size:15px;background:#fff}
+.flexline{display:flex;gap:14px;flex-wrap:wrap;margin-top:9px;font-size:12.5px;
+  color:var(--muted);font-weight:600}
+.flexline span{display:flex;align-items:center;gap:5px}
+.flexline svg{color:var(--green)}
+
+/* qty + ATC */
+.buyrow{display:flex;gap:12px;align-items:stretch;margin-bottom:12px}
+.qty{display:flex;align-items:center;border:2px solid var(--ink);border-radius:12px;overflow:hidden}
+.qty button{width:46px;font-size:22px;font-weight:700;color:var(--ink)}
+.qty button:hover{background:var(--bg)}
+.qty input{width:46px;text-align:center;border:none;font-family:var(--cond);
+  font-weight:800;font-size:19px;background:transparent}
+.atc{flex:1;background:var(--ink);color:#fff;border-radius:12px;
+  font-family:var(--display);text-transform:uppercase;font-size:21px;
+  letter-spacing:.03em;display:flex;align-items:center;justify-content:center;gap:12px;
+  padding:14px;transition:transform .12s,background .2s}
+.atc:hover{background:#1c1c1c}
+.atc:active{transform:scale(.99)}
+.atc .ap{font-family:var(--cond);font-weight:800;font-size:18px}
+.atc.disabled{background:var(--line-2);color:#fff;cursor:not-allowed}
+
+/* back in stock */
+#notify{display:none;background:#FFF7E6;border:1px solid var(--gold);
+  border-radius:12px;padding:14px;margin-bottom:12px}
+#notify.on{display:block}
+#notify p{font-family:var(--cond);font-weight:700;text-transform:uppercase;
+  letter-spacing:.04em;font-size:14px;margin-bottom:9px}
+#notify .nf{display:flex;gap:8px}
+#notify input{flex:1;padding:11px;border:1px solid var(--line-2);border-radius:9px;font-size:15px}
+#notify .nb{background:var(--ink);color:#fff;padding:0 16px;border-radius:9px;
+  font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+#notify .ok{color:var(--green);font-weight:700;font-size:14px;margin-top:8px;display:none}
+
+/* trust under CTA */
+#trustbar{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:4px}
+.tcard{display:flex;gap:10px;align-items:center;background:var(--surface);
+  border:1px solid var(--line);border-radius:11px;padding:11px 13px}
+.tcard svg{color:var(--gold-deep);flex:none}
+.tcard b{font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  letter-spacing:.03em;font-size:13.5px;display:block;line-height:1.1}
+.tcard small{font-size:12px;color:var(--muted)}
+
+/* section shells */
+section.band{padding:54px 0;border-top:1px solid var(--line)}
+.band .head{margin-bottom:26px}
+.band .head p{color:var(--muted);max-width:60ch;margin-top:8px}
+
+/* ingredient cards */
+.ing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:900px){.ing-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.ing-grid{grid-template-columns:1fr}}
+.ing{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px;box-shadow:var(--shadow-sm)}
+.ing .dose{font-family:var(--display);font-size:34px;color:var(--ink);line-height:.9}
+.ing .dose b{color:var(--red)}
+.ing h3{font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  letter-spacing:.04em;font-size:17px;margin:8px 0 6px}
+.ing p{font-size:14.5px;color:var(--muted)}
+.ing .tag{display:inline-block;margin-top:10px;font-family:var(--cond);font-weight:700;
+  text-transform:uppercase;letter-spacing:.05em;font-size:11px;color:var(--gold-deep);
+  border:1px solid var(--gold);border-radius:20px;padding:3px 9px}
+
+/* certs */
+.certs{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.cert{display:flex;align-items:center;gap:9px;background:var(--ink);color:#fff;
+  border-radius:30px;padding:9px 16px;font-family:var(--cond);font-weight:800;
+  text-transform:uppercase;letter-spacing:.06em;font-size:13px}
+.cert svg{color:var(--gold)}
+
+/* supplement facts */
+.facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;margin-top:26px}
+@media(max-width:760px){.facts-grid{grid-template-columns:1fr}}
+.facts{background:#fff;border:2px solid var(--ink);border-radius:10px;padding:18px}
+.facts h3{font-family:var(--display);text-transform:uppercase;font-size:26px;
+  border-bottom:8px solid var(--ink);padding-bottom:4px}
+.facts .serv{display:flex;justify-content:space-between;font-size:13.5px;
+  border-bottom:1px solid var(--ink);padding:5px 0;font-weight:600}
+.facts table{width:100%;border-collapse:collapse;font-size:14.5px}
+.facts th{text-align:right;font-size:11px;text-transform:uppercase;letter-spacing:.04em;
+  border-bottom:3px solid var(--ink);padding:4px 0}
+.facts td{padding:7px 0;border-bottom:1px solid var(--line-2)}
+.facts td:last-child{text-align:right;font-weight:700}
+.facts .row-strong td{font-weight:800;border-bottom:3px solid var(--ink)}
+.facts .ind{padding-left:16px;font-weight:400}
+.facts .fn{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+.facts-img{background:#fff;border:1px solid var(--line);border-radius:var(--r);
+  padding:16px;box-shadow:var(--shadow-sm)}
+.facts-img img{margin:0 auto;max-height:560px;width:auto}
+.ingline{margin-top:14px;font-size:13.5px;color:var(--muted)}
+.ingline b{color:var(--ink)}
+
+/* how to use */
+.howgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.howgrid{grid-template-columns:1fr}}
+.how{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:22px;box-shadow:var(--shadow-sm);position:relative}
+.how .n{font-family:var(--display);font-size:54px;color:var(--bg);line-height:.8;
+  -webkit-text-stroke:2px var(--line-2)}
+.how h3{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:18px;margin:6px 0}
+.how p{font-size:14.5px;color:var(--muted)}
+
+/* science */
+.sci-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+@media(max-width:820px){.sci-grid{grid-template-columns:1fr}}
+.sci ul{list-style:none;margin-top:16px;display:grid;gap:13px}
+.sci li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.sci li svg{color:var(--red);flex:none;margin-top:4px}
+.sci-img img{border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow)}
+
+/* COMPLETE YOUR STACK */
+#stack{background:var(--ink);color:#fff;border-top:none}
+#stack .sec-title{color:#fff}
+#stack .head p{color:rgba(255,255,255,.7)}
+.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:22px}
+@media(max-width:820px){.stack-grid{grid-template-columns:1fr}}
+.sp{background:#171717;border:1px solid #2a2a2a;border-radius:var(--r);padding:16px;
+  display:flex;gap:14px;align-items:center}
+.sp.base{border-color:var(--gold)}
+.sp .pic{width:78px;height:78px;background:#fff;border-radius:10px;flex:none;padding:6px}
+.sp .pic img{width:100%;height:100%;object-fit:contain}
+.sp h3{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:16px}
+.sp .role{font-size:12px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.sp .pr{font-family:var(--cond);font-weight:800;font-size:17px;margin-top:4px}
+.sp label{display:flex;align-items:center;gap:7px;margin-top:9px;font-size:13px;
+  color:rgba(255,255,255,.8);cursor:pointer}
+.sp input{width:18px;height:18px;accent-color:var(--gold)}
+.sp.base .lock{font-size:13px;color:rgba(255,255,255,.55);margin-top:9px;display:flex;gap:6px;align-items:center}
+.stack-foot{display:flex;align-items:center;justify-content:space-between;
+  background:#171717;border:1px solid #2a2a2a;border-radius:var(--r);padding:18px 22px;flex-wrap:wrap;gap:16px}
+.stack-foot .tot s{color:rgba(255,255,255,.5);font-weight:600;margin-right:8px}
+.stack-foot .tot .big{font-family:var(--display);font-size:34px}
+.stack-foot .tot .sv{color:var(--gold);font-weight:800;text-transform:uppercase;
+  font-family:var(--cond);letter-spacing:.05em;font-size:14px}
+.stack-foot .addstack{background:var(--gold);color:#0A0A0A;font-family:var(--display);
+  text-transform:uppercase;font-size:19px;letter-spacing:.03em;padding:14px 28px;border-radius:12px}
+.stack-foot .addstack:hover{background:#ffbd1a}
+
+/* REVIEWS */
+.rev-top{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:start}
+@media(max-width:760px){.rev-top{grid-template-columns:1fr}}
+.rev-score .big{font-family:var(--display);font-size:74px;line-height:.8}
+.rev-score .stars{font-size:24px}
+.rev-score .cnt{color:var(--muted);font-weight:600;margin-top:6px}
+.rec{margin-top:12px;font-size:13.5px;font-weight:700;color:var(--green)}
+.bars{display:grid;gap:7px}
+.bar{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600}
+.bar .t{width:42px;color:var(--muted)}
+.bar .track{flex:1;height:9px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar .fill{height:100%;background:var(--gold)}
+.bar .c{width:34px;text-align:right;color:var(--muted)}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:26px 0 18px}
+.filters button{border:1px solid var(--line-2);border-radius:24px;padding:8px 15px;
+  font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  font-size:13px;background:var(--surface);min-height:40px}
+.filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ugc{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;margin-bottom:22px}
+.ugc img{width:108px;height:108px;border-radius:10px;object-fit:cover;flex:none;border:1px solid var(--line)}
+.ugc .vt{position:relative;flex:none}
+.ugc .vt .tri{position:absolute;inset:0;display:grid;place-items:center}
+.rev{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px;margin-bottom:14px;box-shadow:var(--shadow-sm)}
+.rev .rh{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.rev .who{font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:15px}
+.rev .vbuy{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;
+  color:var(--green);background:var(--green-bg);padding:3px 8px;border-radius:6px;margin-left:8px}
+.rev .stars{font-size:15px}
+.rev .when{font-size:12.5px;color:var(--muted)}
+.rev h4{font-weight:700;margin:9px 0 4px;font-size:16.5px}
+.rev p{font-size:15px;color:#333}
+.rev .rimg{display:flex;gap:8px;margin-top:11px}
+.rev .rimg img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+.rev[hidden]{display:none}
+
+/* Q&A */
+.qa{margin-top:30px}
+.qa h3{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:20px;margin-bottom:12px}
+
+/* accordions (FAQ + Q&A) */
+.acc{border:1px solid var(--line);border-radius:12px;background:var(--surface);
+  margin-bottom:10px;overflow:hidden}
+.acc>button{width:100%;display:flex;justify-content:space-between;align-items:center;
+  gap:16px;padding:17px 18px;text-align:left;font-family:var(--cond);font-weight:700;
+  text-transform:uppercase;letter-spacing:.02em;font-size:16px;min-height:44px}
+.acc>button .pl{font-size:22px;color:var(--gold-deep);transition:transform .2s;flex:none}
+.acc.open>button .pl{transform:rotate(45deg)}
+.acc .panel{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.acc .panel .inner{padding:0 18px 18px;color:#333;font-size:15px}
+
+/* related */
+.rel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.rel-grid{grid-template-columns:repeat(2,1fr)}}
+.rc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:14px;box-shadow:var(--shadow-sm);transition:transform .18s,box-shadow .18s}
+.rc:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.rc .pic{aspect-ratio:1/1;background:var(--bg);border-radius:10px;display:grid;place-items:center;padding:10px}
+.rc .pic img{max-height:100%;object-fit:contain}
+.rc h3{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:15px;margin:11px 0 3px}
+.rc .stars{font-size:13px}.rc .rp{font-family:var(--cond);font-weight:800;font-size:16px;margin-top:5px}
+.rc button.add{width:100%;margin-top:10px;border:2px solid var(--ink);border-radius:9px;
+  padding:9px;font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:13px}
+.rc button.add:hover{background:var(--ink);color:#fff}
+
+/* journal */
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.jgrid{grid-template-columns:1fr}}
+.jc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow-sm)}
+.jc .k{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11.5px;color:var(--gold-deep)}
+.jc h3{font-weight:700;font-size:17px;margin:7px 0}.jc a{font-weight:700;border-bottom:2px solid var(--gold)}
+
+/* guarantee */
+#guarantee{text-align:center;background:var(--surface)}
+#guarantee .seal{width:84px;height:84px;border-radius:50%;background:var(--gold);
+  display:grid;place-items:center;margin:0 auto 16px}
+#guarantee p{max-width:62ch;margin:10px auto 0;color:var(--muted)}
+
+/* STICKY ATC */
+#stickyAtc{position:fixed;left:0;right:0;bottom:0;z-index:45;background:rgba(255,255,255,.97);
+  backdrop-filter:blur(10px);border-top:1px solid var(--line-2);box-shadow:0 -8px 30px rgba(0,0,0,.1);
+  transform:translateY(110%);transition:transform .3s ease}
+#stickyAtc.on{transform:translateY(0)}
+.sa-in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:14px;padding:11px 22px}
+.sa-in .pic{width:52px;height:52px;background:var(--bg);border-radius:9px;padding:4px;flex:none}
+.sa-in .pic img{width:100%;height:100%;object-fit:contain}
+.sa-in .info{flex:1;min-width:0}
+.sa-in .nm{font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:15px;line-height:1}
+.sa-in .vr{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sa-in .pp{font-family:var(--cond);font-weight:800;font-size:19px;text-align:right;flex:none}
+.sa-in .pp s{display:block;font-size:12px;color:var(--muted);font-weight:600}
+.sa-in .sbtn{background:var(--ink);color:#fff;font-family:var(--display);text-transform:uppercase;
+  font-size:17px;letter-spacing:.03em;padding:12px 22px;border-radius:11px;flex:none}
+.sa-in .sbtn:hover{background:#1c1c1c}
+@media(max-width:600px){.sa-in .vr{display:none}.sa-in .sbtn{padding:12px 16px;font-size:15px}}
+
+/* footer */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:40px 0 120px;font-size:14px}
+footer .ft{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer img{height:24px}
+
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:60;background:rgba(10,10,10,.92);display:none;
+  align-items:center;justify-content:center;padding:24px}
+#lb.on{display:flex}
+#lb .lbinner{max-width:90vw;max-height:90vh}
+#lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+#lb .vidbox{width:min(90vw,900px);aspect-ratio:16/9;background:#000;border-radius:12px;
+  display:grid;place-items:center;color:#fff;text-align:center;font-family:var(--cond);
+  text-transform:uppercase;letter-spacing:.06em;border:1px solid #333;padding:20px}
+#lb .close{position:absolute;top:18px;right:22px;color:#fff;font-size:34px;width:48px;height:48px}
+
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:#fff;padding:13px 22px;border-radius:30px;font-family:var(--cond);
+  font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:14px;z-index:70;
+  opacity:0;pointer-events:none;transition:.3s;box-shadow:var(--shadow-lg)}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="announce">Free Shipping On All Orders Over <b>$100</b> &nbsp;·&nbsp; 30-Day Money-Back Guarantee</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="https://magnumsupps.com" aria-label="Magnum Supps home">
+      <img src="https://magnumsupps.com/cdn/shop/files/magnum_logo_black.png?v=1696281610&width=600" alt="Magnum Supplements">
+    </a>
+    <nav>
+      <a href="https://magnumsupps.com/collections/protein">Protein</a>
+      <a href="https://magnumsupps.com/collections/performance">Performance</a>
+      <a href="https://magnumsupps.com/collections/muscle-builders">Muscle</a>
+      <a href="https://magnumsupps.com/collections/stacks-bundles">Stacks</a>
+    </nav>
+    <div class="nav-ic">
+      <button class="icbtn" aria-label="Search"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></button>
+      <button class="icbtn" aria-label="Cart"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="crumb"><a href="https://magnumsupps.com">Home</a> / <a href="https://magnumsupps.com/collections/protein">Protein</a> / Magnum Quattro</div>
+</div>
+
+<!-- ===================== BUYBOX / ABOVE THE FOLD ===================== -->
+<section id="buybox" class="wrap">
+  <div class="buy-grid">
+
+    <!-- GALLERY -->
+    <div id="gallery">
+      <div class="stage" id="stage">
+        <div class="badge-stack">
+          <span class="flag gold">Best Seller</span>
+          <span class="flag red">4-Source Protein</span>
+        </div>
+        <div class="zoom-hint"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></svg> Click to zoom</div>
+
+        <div class="slide on" data-type="img"><img src="https://magnumsupps.com/cdn/shop/files/Magnum-Quattro-2048x2048-01_x1080.png" alt="Magnum Quattro 4-source protein tub, front"></div>
+        <div class="slide" data-type="img"><img src="https://magnumsupps.com/cdn/shop/products/QuattroChocolateLoveCDN2lbsF_f17de077-31c6-4eee-8904-fd61638a9dff.jpg" alt="Magnum Quattro Chocolate Love 2lb label"></div>
+        <div class="slide lifestyle" data-type="img"><img src="https://magnumsupps.com/cdn/shop/files/4-Amazon_Image-Core_Benefits-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Quattro core benefits: 30g protein, 4 isolates, zero bloat"></div>
+        <div class="slide lifestyle" data-type="img"><img src="https://magnumsupps.com/cdn/shop/files/3-Amazon_Image-Differentiation-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Why Quattro is different from standard whey"></div>
+        <div class="slide lifestyle" data-type="img"><img src="https://magnumsupps.com/cdn/shop/files/6-Amazon_Image-Usage-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="How to use Quattro protein"></div>
+        <!-- VIDEO SLIDE (audit: video on PDP) -->
+        <div class="slide lifestyle" data-type="video">
+          <img src="https://magnumsupps.com/cdn/shop/files/8-Amazon_Image-Stack_Options-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Quattro mixability demo video">
+          <div class="play-ov"><span class="pbtn"><svg width="26" height="26" viewBox="0 0 24 24" fill="#0A0A0A"><path d="M8 5v14l11-7z"/></svg></span></div>
+          <span class="vid-cap">▶ Mixability demo · 0:18</span>
+        </div>
+
+        <div class="arrows"><button id="prev" aria-label="Previous image">‹</button><button id="next" aria-label="Next image">›</button></div>
+      </div>
+
+      <div class="thumbs" id="thumbs">
+        <button class="on" aria-label="View image 1"><img src="https://magnumsupps.com/cdn/shop/files/Magnum-Quattro-2048x2048-01_x1080.png" alt=""></button>
+        <button aria-label="View image 2"><img src="https://magnumsupps.com/cdn/shop/products/QuattroChocolateLoveCDN2lbsF_f17de077-31c6-4eee-8904-fd61638a9dff.jpg" alt=""></button>
+        <button aria-label="View image 3"><img src="https://magnumsupps.com/cdn/shop/files/4-Amazon_Image-Core_Benefits-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt=""></button>
+        <button aria-label="View image 4"><img src="https://magnumsupps.com/cdn/shop/files/3-Amazon_Image-Differentiation-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt=""></button>
+        <button aria-label="View image 5"><img src="https://magnumsupps.com/cdn/shop/files/6-Amazon_Image-Usage-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt=""></button>
+        <button class="vid-t" aria-label="Play mixability video"><img src="https://magnumsupps.com/cdn/shop/files/8-Amazon_Image-Stack_Options-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt=""><span class="tri"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></button>
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+
+    <!-- PRODUCT INFO -->
+    <div>
+      <div class="brandline">Magnum Nutraceuticals</div>
+      <h1 class="ptitle">Quattro</h1>
+      <p class="psub">4-Source Time-Released Protein Isolate · <b>30g Protein</b> Per Scoop</p>
+
+      <!-- RATING ATF -->
+      <div class="rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <strong>4.79</strong>
+        <a href="#reviews">43 reviews</a>
+        <span class="vb">· 96% would recommend</span>
+      </div>
+
+      <!-- BENEFIT / HOOK -->
+      <div id="benefits">
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Zero gas or bloating</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> 30g · 4-source protein</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Lactose-friendly</span>
+        <span class="chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Low carb · low fat</span>
+      </div>
+
+      <!-- FLAVOR -->
+      <div class="vlabel">Flavor <span class="sel" id="flavSel">Chocolate Love</span></div>
+      <div class="swatches" id="flavors">
+        <button class="sw on" data-flavor="Chocolate Love" data-stock="1"><span class="dot" style="background:#4a2c1a"></span>Chocolate Love</button>
+        <button class="sw" data-flavor="Vanilla Soft Serve" data-stock="1"><span class="dot" style="background:#f3e6c4"></span>Vanilla Soft Serve</button>
+        <button class="sw oos" data-flavor="Peanut Butter Cups" data-stock="0"><span class="dot" style="background:#b07a3c"></span>Peanut Butter Cups</button>
+        <button class="sw oos" data-flavor="Toasted Cinnamon Cereal" data-stock="0"><span class="dot" style="background:#c98a4b"></span>Toasted Cinnamon</button>
+        <button class="sw oos" data-flavor="Iced Caramel Macchiato" data-stock="0"><span class="dot" style="background:#a9794f"></span>Iced Caramel Macchiato</button>
+      </div>
+
+      <!-- SIZE -->
+      <div class="vlabel">Size <span class="sel" id="sizeSel">2 lb · 28 servings</span></div>
+      <div class="swatches" id="sizes">
+        <button class="sw size on" data-size="2lb" data-serv="28" data-base="69.99"><span>2 LB</span><small>28 servings</small></button>
+        <button class="sw size" data-size="4lb" data-serv="56" data-base="114.99"><span>4 LB</span><small>56 servings · best value</small></button>
+      </div>
+
+      <!-- PURCHASE MODE — SUBSCRIBE DEFAULT ON -->
+      <div class="modes" id="modes">
+        <div class="mode on" data-mode="sub">
+          <span class="radio"></span>
+          <div class="body">
+            <div class="top">
+              <span class="name">Subscribe &amp; Save <span class="save-tag">Save 15%</span></span>
+              <span class="price-now"><s id="subWas">$69.99</s><span id="subNow">$59.49</span></span>
+            </div>
+            <div class="perserv" id="subPer">As low as $2.13 / serving</div>
+            <div class="freq">
+              <label class="sr-only" for="freq">Delivery frequency</label>
+              <select id="freq">
+                <option value="1w">Deliver every week</option>
+                <option value="2w" selected>Deliver every 2 weeks</option>
+                <option value="2m">Deliver every 2 months</option>
+              </select>
+            </div>
+            <div class="flexline">
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Skip any shipment</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Pause anytime</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Cancel anytime</span>
+            </div>
+          </div>
+        </div>
+        <div class="mode" data-mode="once">
+          <span class="radio"></span>
+          <div class="body">
+            <div class="top">
+              <span class="name">One-Time Purchase</span>
+              <span class="price-now"><span id="onceNow">$69.99</span></span>
+            </div>
+            <div class="meta" id="oncePer">$2.50 / serving</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BACK IN STOCK (shown when OOS flavor chosen) -->
+      <div id="notify">
+        <p>Sold out — get notified when <span id="notifyFlav">this flavor</span> is back</p>
+        <div class="nf">
+          <label class="sr-only" for="notifyEmail">Email for back-in-stock alert</label>
+          <input id="notifyEmail" type="email" placeholder="you@email.com">
+          <button class="nb" id="notifyBtn">Notify me</button>
+        </div>
+        <div class="ok" id="notifyOk">✓ You're on the list. We'll email you the moment it restocks.</div>
+      </div>
+
+      <!-- QTY + ATC -->
+      <div class="buyrow">
+        <div class="qty">
+          <button id="qDown" aria-label="Decrease quantity">−</button>
+          <input id="qty" value="1" inputmode="numeric" aria-label="Quantity">
+          <button id="qUp" aria-label="Increase quantity">+</button>
+        </div>
+        <button class="atc" id="atc">Add to Cart <span class="ap" id="atcPrice">· $59.49</span></button>
+      </div>
+
+      <!-- TRUST UNDER CTA -->
+      <div id="trustbar">
+        <div class="tcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><div><b>30-Day Guarantee</b><small>Love it or your money back</small></div></div>
+        <div class="tcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7zM5.5 18.5a2.5 2.5 0 1 0 0 .01M16.5 18.5a2.5 2.5 0 1 0 0 .01"/></svg><div><b>Free Shipping $100+</b><small>Ships in 1–2 business days</small></div></div>
+        <div class="tcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Lab-Tested Quality</b><small>Kosher · GMP facility</small></div></div>
+        <div class="tcard"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 7v5l3 2"/></svg><div><b>Gut-Friendly</b><small>Bromelain · zero bloat</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INGREDIENT TRANSPARENCY ===================== -->
+<section class="band" id="ingredients">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Full Transparency</div>
+      <h2 class="sec-title">What's inside every scoop</h2>
+      <p>Four protein sources that digest at different speeds — so amino acids feed your muscles for hours, not minutes. Each dose is disclosed. No proprietary blends.</p>
+    </div>
+
+    <div class="ing-grid">
+      <div class="ing"><div class="dose">8<b>g</b></div><h3>Whey Protein Isolate</h3><p>Fast-digesting, highest BCAA fraction. Spikes muscle protein synthesis right after training.</p><span class="tag">Fast release</span></div>
+      <div class="ing"><div class="dose">8<b>g</b></div><h3>Milk Protein Isolate</h3><p>Medium-digesting, complete amino profile. Bridges the gap between fast and slow proteins.</p><span class="tag">Medium release</span></div>
+      <div class="ing"><div class="dose">7<b>g</b></div><h3>Egg White Protein</h3><p>Dairy-light, highly bioavailable. Sustains amino delivery through the mid-window.</p><span class="tag">Medium release</span></div>
+      <div class="ing"><div class="dose">7<b>g</b></div><h3>Micellar Casein</h3><p>Slow-release, anti-catabolic. Drip-feeds amino acids for up to 7 hours.</p><span class="tag">Slow release</span></div>
+    </div>
+
+    <div class="ing-grid" style="margin-top:14px">
+      <div class="ing" style="grid-column:span 2;background:var(--ink);color:#fff;border-color:var(--ink)">
+        <div class="dose" style="color:#fff">+<b style="color:var(--gold)">Bromelain</b></div>
+        <h3 style="color:#fff">Digestive enzyme</h3>
+        <p style="color:rgba(255,255,255,.75)">Added to break down protein efficiently — the reason Quattro delivers zero gas or bloating, even for lactose-sensitive lifters.</p>
+        <span class="tag" style="border-color:var(--gold);color:var(--gold)">Absorption + comfort</span>
+      </div>
+      <div class="ing"><div class="dose">30<b>g</b></div><h3>Total Protein</h3><p>High in EAAs &amp; BCAAs per single scoop.</p><span class="tag">Per serving</span></div>
+      <div class="ing"><div class="dose">5<b>fl</b></div><h3>5 Flavours</h3><p>Dialled-in taste with low carb &amp; low fat.</p><span class="tag">Low sugar</span></div>
+    </div>
+
+    <!-- CERTS -->
+    <div class="certs">
+      <span class="cert"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Kosher Certified</span>
+      <span class="cert"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Gluten-Free</span>
+      <span class="cert"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Peanut-Free</span>
+      <span class="cert"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Dye-Free</span>
+      <span class="cert"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Made in a GMP Facility</span>
+    </div>
+
+    <!-- SUPPLEMENT FACTS: structured table + label image -->
+    <div class="facts-grid">
+      <div class="facts">
+        <h3>Supplement Facts</h3>
+        <div class="serv"><span>Serving Size 1 Scoop (37g)</span><span>Servings 28</span></div>
+        <table>
+          <tr><th></th><th>Amount</th></tr>
+          <tr><td>Calories</td><td>140</td></tr>
+          <tr><td>Total Fat</td><td>2.5 g</td></tr>
+          <tr><td>Total Carbohydrate</td><td>3 g</td></tr>
+          <tr class="ind"><td class="ind">Sugars</td><td>1 g</td></tr>
+          <tr class="row-strong"><td>Protein Blend</td><td>30 g</td></tr>
+          <tr class="ind"><td class="ind">Whey Protein Isolate</td><td>8 g</td></tr>
+          <tr class="ind"><td class="ind">Milk Protein Isolate</td><td>8 g</td></tr>
+          <tr class="ind"><td class="ind">Egg White Protein</td><td>7 g</td></tr>
+          <tr class="ind"><td class="ind">Micellar Casein</td><td>7 g</td></tr>
+          <tr><td>Bromelain</td><td>50 mg</td></tr>
+          <tr><td>Sodium</td><td>105 mg</td></tr>
+          <tr><td>Calcium</td><td>120 mg</td></tr>
+        </table>
+        <p class="fn">Representative panel for Chocolate Love, 2 lb. Values vary slightly by flavour — see the on-pack label image for the exact panel of your selection.</p>
+      </div>
+      <div class="facts-img">
+        <img src="https://magnumsupps.com/cdn/shop/files/Magnum-Nutrition_Facts-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.png" alt="Magnum Quattro Chocolate Love nutrition facts label">
+        <p class="ingline"><b>Ingredients:</b> Protein Blend (Whey Protein Isolate, Milk Protein Isolate, Egg White Protein, Micellar Casein), Cocoa, Natural &amp; Artificial Flavour, Bromelain, Sea Salt, Sucralose. <b>Contains:</b> Milk, Egg.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SCIENCE / WHY IT WORKS ===================== -->
+<section class="band" id="science">
+  <div class="wrap sci-grid">
+    <div class="sci">
+      <div class="eyebrow">The Science</div>
+      <h2 class="sec-title">Why 4 sources beat plain whey</h2>
+      <ul>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg> <span>Plain whey clears your bloodstream in ~90 minutes. Quattro layers fast, medium and slow proteins so amino acids stay elevated for hours.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg> <span>A time-released curve means less muscle breakdown between meals and overnight — better net recovery.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg> <span>Added bromelain improves protein digestion and absorption, which is why Quattro sits easy — no bloat, even with lactose sensitivity.</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg> <span>High in EAAs and BCAAs, low in carbs and fat — supports lean muscle while you manage body composition.</span></li>
+      </ul>
+    </div>
+    <div class="sci-img">
+      <img src="https://magnumsupps.com/cdn/shop/files/3-Amazon_Image-Differentiation-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Quattro time-release protein differentiation chart">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW TO USE ===================== -->
+<section class="band" id="howto">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Directions</div><h2 class="sec-title">How to use</h2></div>
+    <div class="howgrid">
+      <div class="how"><div class="n">01</div><h3>Post-Training</h3><p>Mix 1–2 scoops with 1–2 cups of water or your beverage of choice immediately after training.</p></div>
+      <div class="how"><div class="n">02</div><h3>Meal Replacement</h3><p>Use 1–2 servings as part of a high-protein meal-replacement shake when you're on the move.</p></div>
+      <div class="how"><div class="n">03</div><h3>In Recipes</h3><p>Bake it into oats, pancakes and protein treats — Quattro holds up to heat without turning rubbery.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPLETE YOUR STACK (BUNDLE UPSELL) ===================== -->
+<section class="band" id="stack">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow" style="color:var(--gold)">Build &amp; Save</div>
+      <h2 class="sec-title">Complete your stack</h2>
+      <p>Add the products lifters pair with Quattro and take <b style="color:var(--gold)">10% off the whole stack</b>, applied automatically at cart.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="sp base">
+        <div class="pic"><img src="https://magnumsupps.com/cdn/shop/files/Magnum-Quattro-2048x2048-01_x1080.png" alt="Quattro"></div>
+        <div><div class="role">This product</div><h3>Quattro</h3><div class="pr">$59.49</div>
+          <div class="lock"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> In your stack</div></div>
+      </div>
+      <div class="sp">
+        <div class="pic"><img src="https://magnumsupps.com/cdn/shop/files/4-Amazon_Image-Stack_Options-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" onerror="this.src='https://magnumsupps.com/cdn/shop/files/8-Amazon_Image-Stack_Options-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg'" alt="Limitless"></div>
+        <div><div class="role">Pre-Workout</div><h3>Limitless</h3><div class="pr">$64.99</div>
+          <label><input type="checkbox" class="stk" data-price="64.99" checked> Add to stack</label></div>
+      </div>
+      <div class="sp">
+        <div class="pic"><img src="https://magnumsupps.com/cdn/shop/files/6-Amazon_Image-Usage-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Creatine 100"></div>
+        <div><div class="role">Recovery</div><h3>Creatine 100</h3><div class="pr">$29.99</div>
+          <label><input type="checkbox" class="stk" data-price="29.99" checked> Add to stack</label></div>
+      </div>
+    </div>
+    <div class="stack-foot">
+      <div class="tot">
+        <div class="sv" id="stackSave">You save $15.45 (10%)</div>
+        <span><s id="stackWas">$154.47</s><span class="big" id="stackNow">$139.02</span></span>
+      </div>
+      <button class="addstack" id="addStack">Add stack to cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS / SOCIAL PROOF ===================== -->
+<section class="band" id="reviews">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Verified Reviews</div><h2 class="sec-title">What lifters say</h2></div>
+
+    <div class="rev-top">
+      <div class="rev-score">
+        <div class="big">4.79</div>
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <div class="cnt">Based on 43 verified reviews</div>
+        <div class="rec">96% would recommend</div>
+      </div>
+      <div class="bars">
+        <div class="bar"><span class="t">5 ★</span><span class="track"><span class="fill" style="width:84%"></span></span><span class="c">36</span></div>
+        <div class="bar"><span class="t">4 ★</span><span class="track"><span class="fill" style="width:12%"></span></span><span class="c">5</span></div>
+        <div class="bar"><span class="t">3 ★</span><span class="track"><span class="fill" style="width:4%"></span></span><span class="c">2</span></div>
+        <div class="bar"><span class="t">2 ★</span><span class="track"><span class="fill" style="width:0%"></span></span><span class="c">0</span></div>
+        <div class="bar"><span class="t">1 ★</span><span class="track"><span class="fill" style="width:0%"></span></span><span class="c">0</span></div>
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters" id="revFilters">
+      <button class="on" data-f="all">All reviews</button>
+      <button data-f="photo">With photos</button>
+      <button data-f="5">5 star</button>
+      <button data-f="4">4 star</button>
+      <button data-f="3">3 star</button>
+    </div>
+
+    <!-- UGC strip + video testimonial -->
+    <div class="ugc" aria-label="Customer photos and videos">
+      <button class="vt" id="vidTesti" aria-label="Play video review"><img src="https://magnumsupps.com/cdn/shop/files/6-Amazon_Image-Usage-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Video review thumbnail"><span class="tri"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></button>
+      <img src="https://magnumsupps.com/cdn/shop/files/4-Amazon_Image-Core_Benefits-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Customer photo of Quattro">
+      <img src="https://magnumsupps.com/cdn/shop/files/3-Amazon_Image-Differentiation-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Customer photo of Quattro shake">
+      <img src="https://magnumsupps.com/cdn/shop/files/8-Amazon_Image-Stack_Options-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Customer photo of Quattro stack">
+      <img src="https://magnumsupps.com/cdn/shop/products/QuattroChocolateLoveCDN2lbsF_f17de077-31c6-4eee-8904-fd61638a9dff.jpg" alt="Customer photo of Quattro tub">
+    </div>
+
+    <div id="revList">
+      <article class="rev" data-stars="5" data-photo="1">
+        <div class="rh"><span class="who">Marcus T.<span class="vbuy"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Verified Buyer</span></span><span class="stars" aria-hidden="true">★★★★★</span></div>
+        <div class="when">2 weeks ago · Chocolate Love · 4 lb</div>
+        <h4>Finally a protein that doesn't wreck my stomach</h4>
+        <p>I'm lactose sensitive and every other whey left me bloated for hours. Quattro is the first one I can take daily with zero gut issues. Chocolate Love tastes like a milkshake.</p>
+        <div class="rimg"><img src="https://magnumsupps.com/cdn/shop/files/4-Amazon_Image-Core_Benefits-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Marcus's Quattro photo"></div>
+      </article>
+      <article class="rev" data-stars="5" data-photo="0">
+        <div class="rh"><span class="who">Dani R.<span class="vbuy"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Verified Buyer</span></span><span class="stars" aria-hidden="true">★★★★★</span></div>
+        <div class="when">1 month ago · Vanilla Soft Serve · 2 lb</div>
+        <h4>Keeps me full for hours</h4>
+        <p>The time-release blend is real — one shake mid-afternoon and I'm not starving by dinner. Mixes clean in a shaker, no clumps.</p>
+      </article>
+      <article class="rev" data-stars="4" data-photo="1">
+        <div class="rh"><span class="who">Sasha K.<span class="vbuy"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Verified Buyer</span></span><span class="stars" aria-hidden="true">★★★★☆</span></div>
+        <div class="when">1 month ago · Chocolate Love · 2 lb</div>
+        <h4>Great protein, wish there were more flavors in stock</h4>
+        <p>Quality is excellent and I love that every dose is disclosed. Took off one star only because the flavor I wanted was sold out — used the notify button and got emailed when it returned.</p>
+        <div class="rimg"><img src="https://magnumsupps.com/cdn/shop/files/8-Amazon_Image-Stack_Options-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Sasha's Quattro stack photo"></div>
+      </article>
+      <article class="rev" data-stars="5" data-photo="0">
+        <div class="rh"><span class="who">Coach Bryan<span class="vbuy"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Verified Buyer</span></span><span class="stars" aria-hidden="true">★★★★★</span></div>
+        <div class="when">2 months ago · Vanilla Soft Serve · 4 lb</div>
+        <h4>I put my whole team on this</h4>
+        <p>Subscribed and save makes it a no-brainer for restocking. The 4-source blend is exactly what I want for athletes who can only get one shake in per day.</p>
+      </article>
+      <article class="rev" data-stars="3" data-photo="0">
+        <div class="rh"><span class="who">Priya S.<span class="vbuy"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Verified Buyer</span></span><span class="stars" aria-hidden="true">★★★☆☆</span></div>
+        <div class="when">3 months ago · Chocolate Love · 2 lb</div>
+        <h4>Good but a touch sweet for me</h4>
+        <p>No complaints on how it sits — genuinely no bloating. Personally I'd like a slightly less sweet option, but the quality is clearly there.</p>
+      </article>
+    </div>
+
+    <!-- Q&A -->
+    <div class="qa">
+      <h3>Questions &amp; Answers</h3>
+      <div class="acc"><button aria-expanded="false">Is Quattro OK if I'm lactose sensitive? <span class="pl">+</span></button><div class="panel"><div class="inner"><b>A:</b> Yes. The added bromelain enzyme helps break down protein, and customers who react to standard whey report zero gas or bloating. It does contain milk and egg, so it isn't dairy-free.</div></div></div>
+      <div class="acc"><button aria-expanded="false">When should I take it vs. a fast whey? <span class="pl">+</span></button><div class="panel"><div class="inner"><b>A:</b> Quattro shines as an any-time or before-bed protein because of the slow casein fraction. You can still use it post-workout — the whey isolate covers the fast window too.</div></div></div>
+      <div class="acc"><button aria-expanded="false">How many scoops per day? <span class="pl">+</span></button><div class="panel"><div class="inner"><b>A:</b> 1–2 servings depending on your daily protein target. Many lifters do one scoop post-training and one as a meal replacement.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="band" id="faq">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Product FAQ</div><h2 class="sec-title">Good to know</h2></div>
+    <div class="acc"><button aria-expanded="false">Does it actually mix clean in a shaker? <span class="pl">+</span></button><div class="panel"><div class="inner">Yes — 1–2 scoops in 1–2 cups of liquid, shake 10 seconds. No blender needed and no gritty residue.</div></div></div>
+    <div class="acc"><button aria-expanded="false">What's the difference between 2 lb and 4 lb? <span class="pl">+</span></button><div class="panel"><div class="inner">Same formula — the 4 lb tub is 56 servings and brings your per-serving cost down. Best value if Quattro is your daily protein.</div></div></div>
+    <div class="acc"><button aria-expanded="false">How does Subscribe &amp; Save work? <span class="pl">+</span></button><div class="panel"><div class="inner">You save 15% on every order and pick your delivery cadence (weekly, bi-weekly, or every 2 months). Skip, pause, or cancel anytime from your account — no fees.</div></div></div>
+    <div class="acc"><button aria-expanded="false">Can I bake or cook with it? <span class="pl">+</span></button><div class="panel"><div class="inner">Absolutely. It holds up to heat in oats, pancakes and protein bakes without the rubbery texture some isolates get.</div></div></div>
+    <div class="acc"><button aria-expanded="false">What if I don't like it? <span class="pl">+</span></button><div class="panel"><div class="inner">You're covered by our 30-day money-back guarantee. If it's not for you, contact support for a refund.</div></div></div>
+  </div>
+</section>
+
+<!-- ===================== GUARANTEE ===================== -->
+<section class="band" id="guarantee">
+  <div class="wrap">
+    <div class="seal"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <h2 class="sec-title" style="font-size:clamp(1.7rem,4vw,2.6rem)">Train on it for 30 days, risk-free</h2>
+    <p>If Quattro doesn't sit better and recover you faster than your current protein, we'll refund you. That's how confident we are in the 4-source blend.</p>
+  </div>
+</section>
+
+<!-- ===================== RELATED ===================== -->
+<section class="band" id="related">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">You might also like</div><h2 class="sec-title">More from Magnum</h2></div>
+    <div class="rel-grid">
+      <div class="rc"><div class="pic"><img src="https://magnumsupps.com/cdn/shop/files/Magnum-Quattro-2048x2048-01_x1080.png" alt="Limitless"></div><h3>Limitless</h3><div class="stars" style="color:var(--gold)" aria-hidden="true">★★★★★</div><div class="rp">$64.99</div><button class="add">Add to cart</button></div>
+      <div class="rc"><div class="pic"><img src="https://magnumsupps.com/cdn/shop/files/4-Amazon_Image-Core_Benefits-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Primer"></div><h3>Primer</h3><div class="stars" style="color:var(--gold)" aria-hidden="true">★★★★★</div><div class="rp">$49.99</div><button class="add">Add to cart</button></div>
+      <div class="rc"><div class="pic"><img src="https://magnumsupps.com/cdn/shop/files/6-Amazon_Image-Usage-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="Mane Brain"></div><h3>Mane Brain</h3><div class="stars" style="color:var(--gold)" aria-hidden="true">★★★★☆</div><div class="rp">$54.99</div><button class="add">Add to cart</button></div>
+      <div class="rc"><div class="pic"><img src="https://magnumsupps.com/cdn/shop/files/8-Amazon_Image-Stack_Options-Magnum_Quattro_Chocolate_Love_2lb_R1.07_CDN.jpg" alt="NEKTR Greens"></div><h3>NEKTR Greens</h3><div class="stars" style="color:var(--gold)" aria-hidden="true">★★★★★</div><div class="rp">$44.99</div><button class="add">Add to cart</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== JOURNAL / EDUCATION LINKS ===================== -->
+<section class="band" id="journal">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">From the Magnum Journal</div><h2 class="sec-title">Go deeper</h2></div>
+    <div class="jgrid">
+      <div class="jc"><div class="k">Protein 101</div><h3>Fast vs. slow protein: when timing actually matters</h3><a href="https://magnumsupps.com/blogs/news">Read article →</a></div>
+      <div class="jc"><div class="k">Digestion</div><h3>Why your protein bloats you (and how enzymes fix it)</h3><a href="https://magnumsupps.com/blogs/news">Read article →</a></div>
+      <div class="jc"><div class="k">Recovery</div><h3>How much protein per day to actually build muscle</h3><a href="https://magnumsupps.com/blogs/news">Read article →</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap ft">
+    <img src="https://magnumsupps.com/cdn/shop/files/magnum_logo_black.png?v=1696281610&width=600" alt="Magnum" style="filter:invert(1) grayscale(1) brightness(2)">
+    <span>© Magnum Nutraceuticals · Concept PDP redesign — applies the full CRO audit. Brand assets © Magnum Worldwide.</span>
+  </div>
+</footer>
+
+<!-- STICKY ATC -->
+<div id="stickyAtc">
+  <div class="sa-in">
+    <div class="pic"><img src="https://magnumsupps.com/cdn/shop/files/Magnum-Quattro-2048x2048-01_x1080.png" alt="Quattro"></div>
+    <div class="info">
+      <div class="nm">Magnum Quattro</div>
+      <div class="vr" id="saVariant">Chocolate Love · 2 lb · Subscribe &amp; Save</div>
+    </div>
+    <div class="pp"><s id="saWas">$69.99</s><span id="saPrice">$59.49</span></div>
+    <button class="sbtn" id="saBtn">Add to Cart</button>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="Media viewer">
+  <button class="close" id="lbClose" aria-label="Close">×</button>
+  <div class="lbinner" id="lbInner"></div>
+</div>
+
+<div class="toast" id="toast">Added to cart</div>
+
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var fmt=function(n){return '$'+n.toFixed(2)};
+
+  /* ---------- STATE ---------- */
+  var state={flavor:'Chocolate Love',stock:1,size:'2lb',serv:28,base:69.99,mode:'sub',qty:1};
+  var SUBRATE=0.85; // 15% off
+
+  function unit(){return state.mode==='sub'?state.base*SUBRATE:state.base;}
+  function perServing(price){return price/state.serv;}
+
+  function render(){
+    var sub=state.base*SUBRATE, once=state.base;
+    // mode block prices
+    $('#subWas').textContent=fmt(once);
+    $('#subNow').textContent=fmt(sub);
+    $('#onceNow').textContent=fmt(once);
+    $('#subPer').textContent='As low as '+fmt(perServing(sub))+' / serving';
+    $('#oncePer').textContent=fmt(perServing(once))+' / serving';
+    // atc
+    var u=unit()*state.qty;
+    if(state.stock){
+      $('#atc').classList.remove('disabled');
+      $('#atc').innerHTML='Add to Cart <span class="ap">· '+fmt(u)+'</span>';
+      $('#notify').classList.remove('on');
+    }else{
+      $('#atc').classList.add('disabled');
+      $('#atc').innerHTML='Sold Out';
+      $('#notifyFlav').textContent=state.flavor;
+      $('#notify').classList.add('on');
+    }
+    // selected labels
+    $('#flavSel').textContent=state.flavor;
+    $('#sizeSel').textContent=(state.size==='2lb'?'2 lb · 28 servings':'4 lb · 56 servings');
+    // sticky
+    $('#saVariant').textContent=state.flavor+' · '+(state.size==='2lb'?'2 lb':'4 lb')+' · '+(state.mode==='sub'?'Subscribe & Save':'One-time');
+    if(state.mode==='sub'){$('#saWas').style.display='block';$('#saWas').textContent=fmt(once);$('#saPrice').textContent=fmt(sub);}
+    else{$('#saWas').style.display='none';$('#saPrice').textContent=fmt(once);}
+  }
+
+  /* ---------- FLAVORS ---------- */
+  $$('#flavors .sw').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('#flavors .sw').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      state.flavor=b.dataset.flavor; state.stock=b.dataset.stock==='1';
+      render();
+    });
+  });
+
+  /* ---------- SIZES ---------- */
+  $$('#sizes .sw').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('#sizes .sw').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      state.size=b.dataset.size; state.serv=+b.dataset.serv; state.base=+b.dataset.base;
+      render();
+    });
+  });
+
+  /* ---------- MODE (subscribe default) ---------- */
+  $$('#modes .mode').forEach(function(m){
+    m.addEventListener('click',function(){
+      $$('#modes .mode').forEach(function(x){x.classList.remove('on')});
+      m.classList.add('on'); state.mode=m.dataset.mode; render();
+    });
+  });
+
+  /* ---------- QTY ---------- */
+  $('#qUp').addEventListener('click',function(){state.qty++;$('#qty').value=state.qty;render();});
+  $('#qDown').addEventListener('click',function(){if(state.qty>1){state.qty--;$('#qty').value=state.qty;render();}});
+  $('#qty').addEventListener('input',function(){var v=parseInt($('#qty').value)||1;state.qty=Math.max(1,v);render();});
+
+  /* ---------- NOTIFY ---------- */
+  $('#notifyBtn').addEventListener('click',function(){
+    var e=$('#notifyEmail').value;
+    if(e&&e.indexOf('@')>0){$('#notifyOk').style.display='block';$('#notifyEmail').value='';}
+  });
+
+  /* ---------- GALLERY ---------- */
+  var slides=$$('#stage .slide'), thumbs=$$('#thumbs button'), cur=0;
+  var dotsWrap=$('#dots');
+  slides.forEach(function(_,i){var s=document.createElement('span');if(i===0)s.className='on';dotsWrap.appendChild(s);});
+  var dots=$$('#dots span');
+  function show(i){
+    cur=(i+slides.length)%slides.length;
+    slides.forEach(function(s,k){s.classList.toggle('on',k===cur)});
+    thumbs.forEach(function(t,k){t.classList.toggle('on',k===cur)});
+    dots.forEach(function(d,k){d.classList.toggle('on',k===cur)});
+  }
+  thumbs.forEach(function(t,i){t.addEventListener('click',function(){show(i);if(slides[i].dataset.type==='video')openVideo();});});
+  $('#next').addEventListener('click',function(){show(cur+1)});
+  $('#prev').addEventListener('click',function(){show(cur-1)});
+  // swipe
+  var sx=0;
+  $('#stage').addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  $('#stage').addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40)show(cur+(d<0?1:-1));});
+  // click to zoom / play
+  $('#stage').addEventListener('click',function(e){
+    if(e.target.closest('.arrows'))return;
+    if(slides[cur].dataset.type==='video'){openVideo();}
+    else{openImg(slides[cur].querySelector('img').src);}
+  });
+
+  /* ---------- LIGHTBOX ---------- */
+  var lb=$('#lb'), lbInner=$('#lbInner');
+  function openImg(src){lbInner.innerHTML='<img src="'+src+'" alt="Zoomed product image">';lb.classList.add('on');}
+  function openVideo(){lbInner.innerHTML='<div class="vidbox"><div><svg width="54" height="54" viewBox="0 0 24 24" fill="#F2A900"><path d="M8 5v14l11-7z"/></svg><br>Mixability demo<br><small style="opacity:.6">Merchant uploads the clip to Shopify product media</small></div></div>';lb.classList.add('on');}
+  $('#lbClose').addEventListener('click',function(){lb.classList.remove('on');lbInner.innerHTML='';});
+  lb.addEventListener('click',function(e){if(e.target===lb){lb.classList.remove('on');lbInner.innerHTML='';}});
+  $('#vidTesti').addEventListener('click',function(){lbInner.innerHTML='<div class="vidbox"><div><svg width="54" height="54" viewBox="0 0 24 24" fill="#F2A900"><path d="M8 5v14l11-7z"/></svg><br>Video review · Marcus T.<br><small style="opacity:.6">"Zero bloat, daily driver"</small></div></div>';lb.classList.add('on');});
+
+  /* ---------- REVIEW FILTERS ---------- */
+  $$('#revFilters button').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('#revFilters button').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      var f=b.dataset.f;
+      $$('#revList .rev').forEach(function(r){
+        var ok = f==='all' || (f==='photo'&&r.dataset.photo==='1') || (r.dataset.stars===f);
+        r.hidden=!ok;
+      });
+    });
+  });
+
+  /* ---------- ACCORDIONS (FAQ + Q&A) ---------- */
+  $$('.acc>button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var acc=btn.parentElement, panel=acc.querySelector('.panel'), open=acc.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      panel.style.maxHeight=open?panel.scrollHeight+'px':0;
+    });
+  });
+
+  /* ---------- COMPLETE YOUR STACK ---------- */
+  function stackCalc(){
+    var sum=59.49; // Quattro base in stack (sub price)
+    $$('.stk').forEach(function(c){if(c.checked)sum+=parseFloat(c.dataset.price)});
+    var save=sum*0.10, now=sum-save;
+    $('#stackWas').textContent=fmt(sum);
+    $('#stackNow').textContent=fmt(now);
+    $('#stackSave').textContent='You save '+fmt(save)+' (10%)';
+  }
+  $$('.stk').forEach(function(c){c.addEventListener('change',stackCalc)});
+
+  /* ---------- ADD TO CART (demo feedback) ---------- */
+  var toast=$('#toast'),tt;
+  function fire(msg){toast.textContent=msg;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('on')},1900);}
+  $('#atc').addEventListener('click',function(){if(state.stock)fire('Added · '+state.flavor+' '+(state.mode==='sub'?'(Subscription)':''));});
+  $('#saBtn').addEventListener('click',function(){if(state.stock)fire('Added to cart');});
+  $('#addStack').addEventListener('click',function(){fire('Stack added · 10% off applied');});
+  $$('.rc .add').forEach(function(b){b.addEventListener('click',function(){fire('Added to cart');});});
+
+  /* ---------- STICKY ATC visibility (show once the real ATC scrolls off) ---------- */
+  var atcBtn=$('#atc'), footEl=$('footer');
+  function stickyCheck(){
+    var atcGone=atcBtn.getBoundingClientRect().bottom<10;
+    var atFooter=footEl.getBoundingClientRect().top<window.innerHeight; // hide over footer
+    $('#stickyAtc').classList.toggle('on',atcGone && !atFooter);
+  }
+  window.addEventListener('scroll',stickyCheck,{passive:true});
+  stickyCheck();
+
+  render(); stackCalc();
+})();
+</script>
+</body>
+</html>

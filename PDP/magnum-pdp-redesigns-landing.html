@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magnum Supps — PDP Redesigns | CRO Concept Hub</title>
+<meta name="description" content="Conversion-optimized product detail page redesigns for Magnum Supps — Quattro protein and Limitless pre-workout.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0A;--surface:#141414;--line:#262626;--ink:#fff;--muted:#9a9a9a;
+  --gold:#F2A900;--red:#D11F2D;--blue:#2563EB;
+  --display:'Anton',sans-serif;--cond:'Barlow Condensed',sans-serif;--body:'Barlow',Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 20% -10%,rgba(242,169,0,.12),transparent 45%),radial-gradient(circle at 90% 0,rgba(209,31,45,.10),transparent 40%)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{padding:26px 0;border-bottom:1px solid var(--line)}
+header .bar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+header img{height:26px;filter:invert(1) grayscale(1) brightness(2)}
+header .gh{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:14px;
+  border:1px solid var(--line);padding:9px 15px;border-radius:30px;display:flex;gap:8px;align-items:center}
+header .gh:hover{border-color:var(--gold);color:var(--gold)}
+.hero{padding:74px 0 54px;text-align:center}
+.eyebrow{font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:.22em;font-size:14px;color:var(--gold)}
+.hero h1{font-family:var(--display);text-transform:uppercase;font-size:clamp(2.8rem,8vw,6rem);line-height:.9;margin:14px 0 18px;letter-spacing:.01em}
+.hero h1 span{color:var(--gold)}
+.hero p{color:var(--muted);max-width:62ch;margin:0 auto;font-size:18px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:14px 0 40px}
+@media(max-width:760px){.cards{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.card .shot{aspect-ratio:16/11;background:#fff;display:grid;place-items:center;padding:22px;position:relative;overflow:hidden}
+.card .shot img{max-height:100%;object-fit:contain;filter:drop-shadow(0 18px 30px rgba(0,0,0,.25))}
+.card .tag{position:absolute;top:14px;left:14px;font-family:var(--cond);font-weight:800;text-transform:uppercase;
+  letter-spacing:.06em;font-size:11.5px;padding:6px 11px;border-radius:6px;color:#0A0A0A}
+.card .tag.gold{background:var(--gold)}.card .tag.blue{background:var(--blue);color:#fff}
+.card .body{padding:24px;flex:1;display:flex;flex-direction:column}
+.card h2{font-family:var(--display);text-transform:uppercase;font-size:34px;line-height:.92}
+.card .sub{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-size:15px;margin:4px 0 14px}
+.card ul{list-style:none;display:grid;gap:7px;margin:0 0 20px;font-size:14.5px;color:#d9d9d9}
+.card li{display:flex;gap:9px;align-items:flex-start}
+.card li svg{color:var(--gold);flex:none;margin-top:4px}
+.card .btns{margin-top:auto;display:flex;gap:10px}
+.btn{flex:1;text-align:center;font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;font-size:17px;
+  padding:13px;border-radius:11px;border:2px solid var(--line)}
+.btn.primary{background:var(--gold);color:#0A0A0A;border-color:var(--gold)}
+.btn.primary:hover{background:#ffbd1a}
+.btn.ghost:hover{border-color:#fff}
+.info{border-top:1px solid var(--line);padding:44px 0 70px}
+.info h3{font-family:var(--cond);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:22px;margin-bottom:14px}
+.info .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:760px){.info .grid{grid-template-columns:1fr}}
+.pill{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.pill b{font-family:var(--cond);text-transform:uppercase;letter-spacing:.03em;font-size:15px}
+.pill p{color:var(--muted);font-size:14px;margin-top:5px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13.5px;text-align:center}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+  <a href="https://magnumsupps.com" aria-label="Magnum"><img src="https://magnumsupps.com/cdn/shop/files/magnum_logo_black.png?v=1696281610&width=600" alt="Magnum"></a>
+  <a class="gh" href="https://github.com/EdgarPateno" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A12 12 0 0 0 8.2 23.9c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7 0-.7 0-.7 1.2 0 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.4-.5-1.6.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 5 18 5.3 18 5.3c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.3.9 1 .9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+    EdgarPateno
+  </a>
+</div></header>
+
+<section class="hero wrap">
+  <div class="eyebrow">Conversion-Optimized Concepts</div>
+  <h1>Magnum Supps<br><span>PDP Redesigns</span></h1>
+  <p>Two product detail pages rebuilt from a full CRO audit of magnumsupps.com — subscription-first buyboxes, ingredient transparency, social proof, bundle upsells and sticky checkout, in faithful Magnum branding.</p>
+</section>
+
+<section class="wrap cards">
+  <article class="card">
+    <div class="shot"><span class="tag gold">Protein</span><img src="https://magnumsupps.com/cdn/shop/files/Magnum-Quattro-2048x2048-01_x1080.png" alt="Magnum Quattro"></div>
+    <div class="body">
+      <h2>Quattro</h2>
+      <div class="sub">4-Source Protein Isolate · 30g</div>
+      <ul>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Flavor + size variants, sold-out → notify-me capture</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Subscribe &amp; Save defaulted on, per-serving pricing</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Dosed ingredient cards + structured supplement facts</li>
+      </ul>
+      <div class="btns">
+        <a class="btn primary" href="https://edgarpateno.github.io/magnum-quattro-pdp/" target="_blank" rel="noopener">View page</a>
+        <a class="btn ghost" href="https://github.com/EdgarPateno/magnum-quattro-pdp" target="_blank" rel="noopener">Code</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="shot"><span class="tag blue">Pre-Workout</span><img src="https://magnumsupps.com/cdn/shop/products/Magnum_Nutraceuticals-Limitless_Pre-Workout_ElectricBlueRazz-F_7da4f4ae-a012-4424-83d2-c1c9192b7283.jpg" alt="Magnum Limitless"></div>
+    <div class="body">
+      <h2>Limitless</h2>
+      <div class="sub">Complete Pre-Workout · 20g+ Actives</div>
+      <ul>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Flavor swatches, sold-out → notify-me capture</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Clinically-dosed actives, fully disclosed label</li>
+        <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg> Complete-your-stack upsell + sticky checkout</li>
+      </ul>
+      <div class="btns">
+        <a class="btn primary" href="https://edgarpateno.github.io/magnum-limitless-pdp/" target="_blank" rel="noopener">View page</a>
+        <a class="btn ghost" href="https://github.com/EdgarPateno/magnum-limitless-pdp" target="_blank" rel="noopener">Code</a>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="info wrap">
+  <h3>Built from the audit</h3>
+  <div class="grid">
+    <div class="pill"><b>Subscription-first</b><p>Subscribe &amp; Save pre-selected with skip / pause / cancel flexibility — the biggest LTV lever in the audit.</p></div>
+    <div class="pill"><b>Trust &amp; transparency</b><p>30-day guarantee, free-ship threshold, certifications, and per-ingredient dosing the originals lacked.</p></div>
+    <div class="pill"><b>Proof &amp; upsell</b><p>Star breakdowns, UGC, Q&amp;A, and an incentivized "Complete Your Stack" bundle to lift AOV.</p></div>
+  </div>
+</section>
+
+<footer><div class="wrap">Concept redesigns · single-file HTML · brand assets © Magnum Worldwide. Not affiliated with Magnum Nutraceuticals.</div></footer>
+</body>
+</html>

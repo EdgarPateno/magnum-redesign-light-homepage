@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Magnum Nutraceuticals — Delivering Results Since 2005</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ═══ VARIABLES ═══ */
+:root {
+  --bg:          #0A0A0A;
+  --bg-2:        #141414;
+  --bg-3:        #1E1E1E;
+  --bg-4:        #242424;
+  --text:        #FFFFFF;
+  --text-muted:  #888888;
+  --text-dim:    #555555;
+  --accent:      #C9A02A;
+  --accent-h:    #E0B535;
+  --accent-dark: #9A7A1E;
+  --border:      rgba(255,255,255,0.08);
+  --border-acc:  rgba(201,160,42,0.3);
+  --font:        'Inter', -apple-system, sans-serif;
+  --r:           8px;
+  --r-lg:        14px;
+  --max:         430px;
+  --pad:         16px;
+  --hh:          56px;
+  --bottom-bar:  64px;
+}
+
+/* ═══ RESET ═══ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:15px;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;max-width:var(--max);margin:0 auto;padding-bottom:var(--bottom-bar)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--font);cursor:pointer;border:none;outline:none}
+ul{list-style:none}
+input{font-family:var(--font)}
+
+/* ═══ UTILITIES ═══ */
+.container{padding:0 var(--pad)}
+.section-label{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.section-title{font-size:26px;font-weight:900;line-height:1.1;letter-spacing:-.02em}
+.section-sub{font-size:14px;color:var(--text-muted);margin-top:8px;line-height:1.6}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 24px;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;border-radius:var(--r);transition:all .2s;cursor:pointer;border:2px solid transparent;width:100%;-webkit-tap-highlight-color:transparent}
+.btn-gold{background:var(--accent);color:#000;border-color:var(--accent)}
+.btn-outline{background:transparent;color:var(--text);border-color:rgba(255,255,255,0.3)}
+.btn-dark{background:var(--bg-3);color:var(--text);border-color:var(--border)}
+.btn-sm{padding:11px 20px;font-size:12px}
+.stars{color:var(--accent);letter-spacing:1px}
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.badge-gold{background:var(--accent);color:#000}
+.badge-new{background:#1A6EFF;color:#fff}
+.badge-sale{background:#D0271D;color:#fff}
+
+/* ═══ ANNOUNCEMENT BAR ═══ */
+.ann-bar{background:var(--accent);color:#000;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;overflow:hidden;height:32px;display:flex;align-items:center}
+.ann-track{display:flex;align-items:center;animation:marquee 22s linear infinite;will-change:transform;white-space:nowrap}
+.ann-msg{padding:0 32px;flex-shrink:0}
+.ann-sep{flex-shrink:0;opacity:.5;padding:0 4px}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ═══ HEADER ═══ */
+.header{position:sticky;top:0;z-index:1000;background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.header-inner{height:var(--hh);padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between}
+.header-logo img{height:24px;filter:brightness(0) invert(1)}
+.header-icons{display:flex;align-items:center;gap:2px}
+.icon-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:6px;color:var(--text-muted);background:transparent;position:relative;-webkit-tap-highlight-color:transparent}
+.icon-btn svg{width:20px;height:20px}
+.cart-count{position:absolute;top:6px;right:5px;background:var(--accent);color:#000;width:15px;height:15px;border-radius:50%;font-size:8px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.hamburger{display:flex;flex-direction:column;gap:5px;width:40px;height:40px;align-items:center;justify-content:center;background:none;-webkit-tap-highlight-color:transparent}
+.hamburger span{display:block;width:20px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ═══ MOBILE MENU ═══ */
+.mobile-menu{position:fixed;top:0;left:0;width:100%;max-width:var(--max);height:100%;background:var(--bg);z-index:999;transform:translateX(-100%);transition:transform .32s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding:72px var(--pad) 40px}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-nav-item{border-bottom:1px solid var(--border)}
+.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:15px 0;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.mobile-nav-link svg{width:12px;height:12px;fill:var(--text-muted);transition:transform .2s}
+.mobile-nav-item.open .mobile-nav-link svg{transform:rotate(180deg)}
+.mobile-sub{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.mobile-nav-item.open .mobile-sub{max-height:360px}
+.mobile-sub a{display:block;padding:10px 0 10px 12px;font-size:13px;color:var(--text-muted);border-bottom:1px solid rgba(255,255,255,0.04)}
+.mobile-sub a:last-child{border:none}
+.mobile-menu-footer{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+
+/* ═══ HERO ═══ */
+.hero{position:relative;min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.45}
+.hero-bg-overlay{position:absolute;inset:0;background:linear-gradient(to top,#0A0A0A 0%,rgba(10,10,10,.7) 40%,rgba(10,10,10,.15) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 var(--pad) 32px}
+.hero-trust{display:flex;align-items:center;gap:6px;margin-bottom:12px}
+.hero-trust-stars{color:var(--accent);font-size:13px}
+.hero-trust-text{font-size:11px;color:var(--text-muted)}
+.hero-trust-text strong{color:var(--text)}
+.hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.hero-headline{font-size:38px;font-weight:900;line-height:1.0;letter-spacing:-.03em;margin-bottom:12px}
+.hero-headline em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:13px;color:var(--text-muted);line-height:1.6;margin-bottom:24px}
+.hero-ctas{display:flex;flex-direction:column;gap:10px}
+.hero-badges{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.hero-badge{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted)}
+.hero-badge svg{width:14px;height:14px;color:var(--accent);flex-shrink:0}
+
+/* ═══ PROMO STRIP ═══ */
+.promo-strip{position:relative;overflow:hidden;padding:28px var(--pad);border-bottom:1px solid var(--border)}
+.promo-strip.theme-gold{background:linear-gradient(160deg,#0D0B04 0%,#1A1200 100%)}
+.promo-strip.theme-fire{background:linear-gradient(160deg,#0D0505 0%,#1A0800 100%)}
+.promo-strip.theme-ice{background:linear-gradient(160deg,#040A14 0%,#071420 100%)}
+.promo-strip.theme-dark{background:var(--bg-2)}
+.promo-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:300px;height:200px;border-radius:50%;pointer-events:none}
+.theme-gold .promo-glow{background:radial-gradient(ellipse,rgba(201,160,42,0.2) 0%,transparent 70%)}
+.theme-fire .promo-glow{background:radial-gradient(ellipse,rgba(220,80,20,0.2) 0%,transparent 70%)}
+.theme-ice .promo-glow{background:radial-gradient(ellipse,rgba(30,120,220,0.2) 0%,transparent 70%)}
+.promo-dismiss{position:absolute;top:10px;right:12px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;border-radius:50%;color:var(--text-dim);font-size:18px;background:transparent;border:none;z-index:2;-webkit-tap-highlight-color:transparent}
+.promo-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px}
+.promo-img{width:110px;height:110px;object-fit:contain;filter:drop-shadow(0 4px 16px rgba(201,160,42,0.3))}
+.promo-img-emoji{font-size:64px;line-height:1}
+.promo-eyebrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center}
+.promo-tag{display:inline-block;padding:3px 10px;border-radius:4px;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.theme-gold .promo-tag{background:var(--accent);color:#000}
+.theme-fire .promo-tag{background:#D0271D;color:#fff}
+.theme-ice .promo-tag{background:#1A6EFF;color:#fff}
+.theme-dark .promo-tag{background:var(--bg-3);color:var(--text);border:1px solid var(--border)}
+.promo-countdown{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;color:var(--text-muted)}
+.promo-timer{display:inline-flex;gap:3px;align-items:center}
+.promo-unit{background:var(--bg-3);border:1px solid var(--border);border-radius:3px;padding:2px 5px;font-size:11px;font-weight:800;color:var(--text);min-width:24px;text-align:center;font-variant-numeric:tabular-nums}
+.promo-sep{color:var(--text-dim)}
+.promo-headline{font-size:20px;font-weight:900;letter-spacing:-.02em;line-height:1.15}
+.promo-headline em{font-style:normal}
+.theme-gold .promo-headline em{color:var(--accent)}
+.theme-fire .promo-headline em{color:#FF6B35}
+.theme-ice .promo-headline em{color:#4A9EFF}
+.theme-dark .promo-headline em{color:var(--accent)}
+.promo-sub{font-size:12px;color:var(--text-muted);line-height:1.5;max-width:320px}
+.promo-cta-wrap{width:100%;display:flex;flex-direction:column;gap:8px;align-items:center}
+.promo-cta-wrap .btn{max-width:320px}
+.promo-secondary{font-size:11px;color:var(--text-dim);text-decoration:underline;text-underline-offset:3px}
+
+/* ═══ QUIZ ═══ */
+.quiz-section{background:linear-gradient(160deg,var(--bg-2) 0%,#0D1220 100%);border-top:1px solid var(--border);padding:40px var(--pad)}
+.quiz-steps{display:flex;flex-direction:column;gap:16px;margin:20px 0}
+.quiz-step{display:flex;align-items:flex-start;gap:12px}
+.quiz-step-num{width:36px;height:36px;border-radius:50%;background:var(--bg-3);border:1px solid var(--border-acc);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--accent);flex-shrink:0}
+.quiz-step-text h4{font-size:14px;font-weight:700;margin-bottom:2px}
+.quiz-step-text p{font-size:12px;color:var(--text-muted)}
+.quiz-cta{display:flex;flex-direction:column;gap:8px;margin-top:4px;align-items:center}
+.quiz-cta .btn{max-width:340px}
+.quiz-note{font-size:11px;color:var(--text-muted);text-align:center}
+
+/* ═══ CATEGORIES ═══ */
+.categories{padding:40px 0;background:var(--bg)}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;padding:0 var(--pad);margin-bottom:20px}
+.categories-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 var(--pad)}
+.cat-card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;-webkit-tap-highlight-color:transparent;active:scale(.98)}
+.cat-img-wrap{position:relative;aspect-ratio:1;overflow:hidden;background:var(--bg-3)}
+.cat-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.cat-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.5) 0%,transparent 60%);pointer-events:none}
+.cat-card-body{padding:10px 10px 12px;text-align:center}
+.cat-name{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.cat-count{font-size:10px;color:var(--text-muted);margin-top:2px}
+
+/* ═══ BESTSELLERS ═══ */
+.bestsellers{padding:40px 0;background:var(--bg-2)}
+.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 var(--pad)}
+.product-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;-webkit-tap-highlight-color:transparent}
+.product-img-wrap{position:relative;aspect-ratio:1;overflow:hidden;background:var(--bg-4)}
+.product-img-wrap img{width:100%;height:100%;object-fit:cover}
+.product-badge-wrap{position:absolute;top:8px;left:8px;display:flex;flex-direction:column;gap:4px}
+.product-body{padding:10px 10px 0;flex:1;display:flex;flex-direction:column}
+.product-name{font-size:12px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;margin-bottom:2px}
+.product-tagline{font-size:10px;color:var(--text-muted);margin-bottom:6px;line-height:1.4;flex:1}
+.product-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.product-stars{display:flex;align-items:center;gap:3px}
+.product-stars .stars{font-size:10px}
+.product-stars span{font-size:10px;color:var(--text-muted)}
+.product-price{font-size:13px;font-weight:800;color:var(--accent)}
+.product-atc-btn{display:block;background:var(--accent);color:#000;padding:10px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;text-align:center;width:100%;border:none;font-family:var(--font);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .15s}
+.product-atc-btn:active{background:var(--accent-h)}
+
+/* ═══ BUNDLE ═══ */
+.bundle{padding:40px var(--pad);background:var(--bg);text-align:center}
+.bundle-save-callout{display:inline-flex;align-items:center;gap:6px;background:rgba(201,160,42,0.1);border:1px solid var(--border-acc);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--accent);margin:16px 0 20px}
+.bundle-steps{display:flex;flex-direction:column;gap:12px;margin-bottom:24px}
+.bundle-step{display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);text-align:left}
+.bundle-step-num{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#000;flex-shrink:0}
+.bundle-step h4{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.bundle-step p{font-size:12px;color:var(--text-muted);line-height:1.4}
+.bundle-ctas{display:flex;flex-direction:column;gap:10px;align-items:center}
+.bundle-ctas .btn{max-width:360px}
+
+/* ═══ SOCIAL PROOF ═══ */
+.social-proof{padding:40px 0;background:var(--bg-2)}
+.trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r-lg);margin:0 var(--pad) 32px;overflow:hidden}
+.trust-item{display:flex;flex-direction:column;align-items:center;gap:4px;padding:16px 8px;border-right:1px solid var(--border)}
+.trust-item:last-child{border-right:none}
+.trust-icon{font-size:20px}
+.trust-val{font-size:13px;font-weight:800;color:var(--text)}
+.trust-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);text-align:center}
+.trust-row-2{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--bg-3);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);margin:-32px var(--pad) 32px;overflow:hidden}
+.reviews-header-m{text-align:center;margin:0 var(--pad) 20px;padding:0 var(--pad)}
+.reviews-score-row{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px}
+.reviews-score{font-size:44px;font-weight:900;color:var(--accent);line-height:1}
+.reviews-detail .stars{font-size:16px}
+.reviews-detail p{font-size:12px;color:var(--text-muted);margin-top:2px}
+.reviews-list{display:flex;flex-direction:column;gap:10px;padding:0 var(--pad)}
+.review-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px}
+.review-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.review-name{font-size:13px;font-weight:700}
+.review-product{font-size:10px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:1px}
+.review-text{font-size:13px;color:var(--text-muted);line-height:1.6;font-style:italic}
+.review-verified{font-size:10px;color:var(--text-dim);margin-top:8px}
+
+/* ═══ LOYALTY ═══ */
+.loyalty{padding:40px var(--pad);background:var(--bg);border-top:1px solid var(--border)}
+.loyalty-visual{background:linear-gradient(135deg,#0D1220 0%,var(--bg-2) 100%);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px var(--pad);display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;margin:20px 0;position:relative;overflow:hidden}
+.loyalty-visual::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(201,160,42,0.15),transparent);pointer-events:none}
+.loyalty-badge-icon{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 0 40px rgba(201,160,42,0.3)}
+.loyalty-pts-box{background:var(--bg-3);border-radius:var(--r);padding:12px 20px;width:100%;border:1px solid var(--border-acc)}
+.loyalty-pts-label{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em}
+.loyalty-pts-val{font-size:28px;font-weight:900;color:var(--accent)}
+.loyalty-pts-sub{font-size:11px;color:var(--text-muted)}
+.loyalty-perks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.loyalty-perk{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);padding:14px}
+.loyalty-perk-icon{font-size:22px;margin-bottom:6px}
+.loyalty-perk h4{font-size:12px;font-weight:800;margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em}
+.loyalty-perk p{font-size:11px;color:var(--text-muted);line-height:1.4}
+.loyalty-ctas{display:flex;flex-direction:column;gap:10px;margin-top:16px;align-items:center}
+.loyalty-ctas .btn{max-width:340px}
+.loyalty-note{font-size:10px;color:var(--text-dim);text-align:center;margin-top:4px}
+
+/* ═══ ATHLETES ═══ */
+.athletes{padding:40px 0;background:var(--bg-2)}
+.athletes-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 var(--pad)}
+.athlete-card{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:3/4}
+.athlete-card img{width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.8)}
+.athlete-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.2) 55%,transparent 100%)}
+.athlete-body{position:absolute;bottom:0;left:0;right:0;padding:14px 12px}
+.athlete-sport{font-size:9px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.athlete-name{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.02em}
+.athlete-handle{font-size:10px;color:rgba(255,255,255,.45);margin-top:3px}
+.athlete-quote{font-size:11px;color:rgba(255,255,255,.6);line-height:1.4;font-style:italic;margin-top:4px}
+
+/* ═══ EMAIL ═══ */
+.email-section{padding:40px var(--pad);background:linear-gradient(160deg,#0D1220 0%,#0A0A0A 60%,#120D05 100%);border-top:1px solid var(--border);text-align:center}
+.email-offer-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(201,160,42,0.12);border:1px solid var(--border-acc);border-radius:20px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:16px}
+.email-goals{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:16px 0}
+.email-goal-chip{padding:7px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg-2);font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;color:var(--text-muted);-webkit-tap-highlight-color:transparent}
+.email-goal-chip.active{border-color:var(--accent);color:var(--accent);background:rgba(201,160,42,0.08)}
+.email-form{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.email-input{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;width:100%}
+.email-input:focus{border-color:var(--accent)}
+.email-input::placeholder{color:var(--text-dim)}
+.email-success{display:none;padding:16px;background:rgba(201,160,42,0.1);border:1px solid var(--border-acc);border-radius:var(--r);color:var(--accent);font-weight:700;text-align:center;margin-top:12px;font-size:13px}
+.email-fine{font-size:10px;color:var(--text-dim);margin-top:10px}
+
+/* ═══ FOOTER ═══ */
+.footer{background:var(--bg);border-top:1px solid var(--border)}
+.footer-brand{padding:28px var(--pad) 20px}
+.footer-brand img{height:22px;filter:brightness(0) invert(1);margin-bottom:10px}
+.footer-tagline{font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:16px}
+.footer-socials{display:flex;gap:8px}
+.footer-social{width:36px;height:36px;border-radius:8px;background:var(--bg-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-muted);-webkit-tap-highlight-color:transparent}
+.footer-accordion{border-top:1px solid var(--border)}
+.footer-acc-item{border-bottom:1px solid var(--border)}
+.footer-acc-trigger{display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.footer-acc-trigger svg{width:12px;height:12px;fill:var(--text-muted);transition:transform .2s;flex-shrink:0}
+.footer-acc-item.open .footer-acc-trigger svg{transform:rotate(180deg)}
+.footer-acc-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.footer-acc-item.open .footer-acc-body{max-height:320px}
+.footer-acc-body ul{padding:0 var(--pad) 16px}
+.footer-acc-body li{margin-bottom:10px}
+.footer-acc-body a{font-size:13px;color:var(--text-muted)}
+.footer-newsletter{padding:20px var(--pad);border-top:1px solid var(--border)}
+.footer-newsletter p{font-size:10px;color:var(--text-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:.08em}
+.footer-email-row{display:flex;gap:8px}
+.footer-email-row input{flex:1;background:var(--bg-2);border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-size:12px;color:var(--text);outline:none;font-family:var(--font)}
+.footer-email-row input:focus{border-color:var(--accent)}
+.footer-email-row button{background:var(--accent);color:#000;border:none;border-radius:6px;padding:10px 16px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-family:var(--font);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.footer-bottom{padding:16px var(--pad);border-top:1px solid var(--border)}
+.footer-copy{font-size:10px;color:var(--text-dim);margin-bottom:10px}
+.footer-legal{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.footer-legal a{font-size:10px;color:var(--text-dim)}
+.payment-icons{display:flex;gap:5px;flex-wrap:wrap}
+.payment-icon{background:var(--bg-2);border:1px solid var(--border);border-radius:4px;padding:3px 7px;font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:.04em}
+
+/* ═══ COOKIE CONSENT ═══ */
+.cookie-banner{position:fixed;bottom:var(--bottom-bar);left:0;right:0;max-width:var(--max);margin:0 auto;z-index:2000;background:var(--bg-2);border-top:1px solid var(--border-acc);border-left:1px solid var(--border);border-right:1px solid var(--border);box-shadow:0 -8px 32px rgba(0,0,0,.6);transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);padding:16px var(--pad)}
+.cookie-banner.visible{transform:translateY(0)}
+.cookie-title{font-size:13px;font-weight:800;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.cookie-title-icon{font-size:15px}
+.cookie-desc{font-size:11px;color:var(--text-muted);line-height:1.5;margin-bottom:12px}
+.cookie-desc a{color:var(--accent);text-decoration:underline;text-underline-offset:2px}
+.cookie-actions{display:flex;gap:8px;align-items:center}
+.cookie-btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:var(--r);cursor:pointer;transition:all .2s;border:2px solid transparent;-webkit-tap-highlight-color:transparent}
+.cookie-btn-accept{background:var(--accent);color:#000;border-color:var(--accent);flex:1}
+.cookie-btn-reject{background:transparent;color:var(--text-muted);border-color:var(--border);flex:1}
+.cookie-btn-manage{background:none;border:none;font-family:var(--font);font-size:10px;color:var(--text-dim);cursor:pointer;text-decoration:underline;text-underline-offset:3px;white-space:nowrap;padding:4px;-webkit-tap-highlight-color:transparent}
+/* Preferences modal */
+.cookie-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:2100;display:none;align-items:flex-end;justify-content:center}
+.cookie-modal-overlay.visible{display:flex}
+.cookie-modal{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg) var(--r-lg) 0 0;width:100%;max-width:var(--max);overflow:hidden;max-height:90vh;overflow-y:auto}
+.cookie-modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px var(--pad);border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg-2)}
+.cookie-modal-title{font-size:15px;font-weight:800}
+.cookie-modal-close{width:30px;height:30px;border-radius:6px;background:var(--bg-3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px;color:var(--text-muted)}
+.cookie-modal-body{padding:16px var(--pad);display:flex;flex-direction:column;gap:12px}
+.cookie-pref{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:14px;background:var(--bg-3);border-radius:var(--r);border:1px solid var(--border)}
+.cookie-pref-info h4{font-size:13px;font-weight:700;margin-bottom:2px}
+.cookie-pref-info p{font-size:11px;color:var(--text-muted);line-height:1.4}
+.cookie-toggle{position:relative;flex-shrink:0;width:40px;height:22px;margin-top:2px}
+.cookie-toggle input{opacity:0;width:0;height:0;position:absolute}
+.cookie-toggle-track{position:absolute;inset:0;background:var(--bg-4);border-radius:11px;transition:background .2s;cursor:pointer;border:1px solid var(--border)}
+.cookie-toggle input:checked + .cookie-toggle-track{background:var(--accent);border-color:var(--accent)}
+.cookie-toggle-thumb{position:absolute;top:3px;left:3px;width:14px;height:14px;background:#fff;border-radius:50%;transition:transform .2s;pointer-events:none}
+.cookie-toggle input:checked ~ .cookie-toggle-thumb{transform:translateX(18px)}
+.cookie-toggle-disabled .cookie-toggle-track{cursor:not-allowed;opacity:.5}
+.cookie-modal-footer{display:flex;gap:8px;padding:14px var(--pad);border-top:1px solid var(--border);position:sticky;bottom:0;background:var(--bg-2)}
+.cookie-modal-footer .cookie-btn{flex:1}
+
+/* ═══ STICKY BOTTOM BAR ═══ */
+.sticky-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:var(--max);z-index:900;background:rgba(10,10,10,0.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:10px var(--pad);display:flex;gap:8px}
+.sticky-bar .btn{flex:1;padding:13px 16px;font-size:13px}
+</style>
+</head>
+<body>
+
+<!-- ═══ ANNOUNCEMENT BAR ═══ -->
+<div class="ann-bar">
+  <div class="ann-track">
+    <div class="ann-msg">🚚 FREE SHIPPING OVER $100 CAD</div>
+    <span class="ann-sep">★</span>
+    <div class="ann-msg">🔥 BUY 2 GET 1 FREE — This Summer</div>
+    <span class="ann-sep">★</span>
+    <div class="ann-msg">⭐ 4.97 Stars · 671+ Reviews</div>
+    <span class="ann-sep">★</span>
+    <div class="ann-msg">🚚 FREE SHIPPING OVER $100 CAD</div>
+    <span class="ann-sep">★</span>
+    <div class="ann-msg">🔥 BUY 2 GET 1 FREE — This Summer</div>
+    <span class="ann-sep">★</span>
+    <div class="ann-msg">⭐ 4.97 Stars · 671+ Reviews</div>
+    <span class="ann-sep">★</span>
+  </div>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="/" class="header-logo">
+      <img src="https://magnumsupps.com/cdn/shop/files/magnum_logo_black.png?v=1696281610&width=600" alt="Magnum Nutraceuticals">
+    </a>
+    <div class="header-icons">
+      <button class="icon-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MOBILE MENU ═══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-nav-item" id="mItem1">
+    <div class="mobile-nav-link" onclick="toggleMobileItem(1)">
+      Supplements
+      <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
+    </div>
+    <div class="mobile-sub">
+      <a href="/collections/protein">Protein</a>
+      <a href="/collections/performance">Pre-Workout</a>
+      <a href="/collections/muscle-builders">Muscle Builders</a>
+      <a href="/collections/fat-burners">Fat Burners</a>
+      <a href="/collections/general-health">General Health</a>
+      <a href="/collections/supplements">Shop All →</a>
+    </div>
+  </div>
+  <div class="mobile-nav-item">
+    <div class="mobile-nav-link"><a href="/collections/stacks-bundles" style="display:block;width:100%">Bundles</a></div>
+  </div>
+  <div class="mobile-nav-item">
+    <div class="mobile-nav-link"><a href="/pages/quiz" style="display:block;width:100%;color:var(--accent)">🎯 Take the Quiz</a></div>
+  </div>
+  <div class="mobile-nav-item">
+    <div class="mobile-nav-link"><a href="/pages/loyalty" style="display:block;width:100%;color:var(--accent)">★ Loyalty Program</a></div>
+  </div>
+  <div class="mobile-nav-item" id="mItem2">
+    <div class="mobile-nav-link" onclick="toggleMobileItem(2)">
+      Shop by Goal
+      <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
+    </div>
+    <div class="mobile-sub">
+      <a href="/collections/muscle-builders">💪 Build Muscle</a>
+      <a href="/collections/fat-burners">🔥 Burn Fat</a>
+      <a href="/collections/performance">⚡ Athletic Performance</a>
+      <a href="/collections/general-health">🌿 General Health</a>
+    </div>
+  </div>
+  <div class="mobile-nav-item">
+    <div class="mobile-nav-link"><a href="/pages/athlete-page" style="display:block;width:100%">Athletes</a></div>
+  </div>
+  <div class="mobile-nav-item">
+    <div class="mobile-nav-link"><a href="/blogs/news" style="display:block;width:100%">Blog</a></div>
+  </div>
+  <div class="mobile-menu-footer">
+    <a href="/pages/quiz" class="btn btn-gold">Find My Stack →</a>
+    <a href="/pages/loyalty" class="btn btn-outline">Join Loyalty Program</a>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <img class="hero-bg-img"
+    src="https://magnumsupps.com/cdn/shop/products/Magnum_Nutraceuticals-Limitless_Pre-Workout_ElectricBlueRazz-F_7da4f4ae-a012-4424-83d2-c1c9192b7283.jpg?v=1775506894&width=800"
+    alt="Magnum LIMITLESS" loading="eager">
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-content" id="heroText">
+    <div class="hero-trust">
+      <span class="hero-trust-stars stars">★★★★★</span>
+      <span class="hero-trust-text"><strong>4.97</strong> · 671+ verified reviews</span>
+    </div>
+    <div class="hero-eyebrow">Delivering Results Since 2005</div>
+    <h1 class="hero-headline">Fuel The<br><em>Champion</em><br>Within You</h1>
+    <p class="hero-sub">Award-winning, scientifically-formulated supplements trusted by elite athletes worldwide. No proprietary blends. No compromises.</p>
+    <div class="hero-ctas">
+      <a href="/collections/supplements" class="btn btn-gold">Shop Best-Sellers</a>
+      <a href="/pages/quiz" class="btn btn-outline">Find My Stack →</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Lab Tested</span>
+      </div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>No Prop. Blends</span>
+      </div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span>Free Ship $100+</span>
+      </div>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>20+ Years Trusted</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROMO STRIP ═══ -->
+<!--
+  ┌──────────────────────────────────────────────────────────────┐
+  │  PROMO CONFIG — edit the JS object below to update this strip │
+  └──────────────────────────────────────────────────────────────┘
+-->
+<section class="promo-strip" id="promoStrip">
+  <div class="promo-glow"></div>
+  <button class="promo-dismiss" id="promoDismiss" aria-label="Dismiss">×</button>
+  <div class="promo-inner">
+    <div id="promoIcon"></div>
+    <div class="promo-eyebrow">
+      <span class="promo-tag" id="promoTag"></span>
+      <div class="promo-countdown" id="promoCountdownWrap" style="display:none">
+        Ends in:
+        <div class="promo-timer">
+          <span class="promo-unit" id="cdH">00</span><span class="promo-sep">:</span>
+          <span class="promo-unit" id="cdM">00</span><span class="promo-sep">:</span>
+          <span class="promo-unit" id="cdS">00</span>
+        </div>
+      </div>
+    </div>
+    <div class="promo-headline" id="promoHeadline"></div>
+    <div class="promo-sub" id="promoSub"></div>
+    <div class="promo-cta-wrap">
+      <a class="btn" id="promoBtn" href="#"></a>
+      <span class="promo-secondary" id="promoSecondary"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUIZ ═══ -->
+<section class="quiz-section">
+  <div class="section-label">Personalized Recommendations</div>
+  <h2 class="section-title">Not Sure Where<br>To Start?</h2>
+  <p class="section-sub">Answer 5 quick questions and get a supplement plan built for your exact goals.</p>
+  <div class="quiz-steps">
+    <div class="quiz-step">
+      <div class="quiz-step-num">1</div>
+      <div class="quiz-step-text">
+        <h4>Tell Us Your Goal</h4>
+        <p>Build muscle, burn fat, boost performance, or improve health.</p>
+      </div>
+    </div>
+    <div class="quiz-step">
+      <div class="quiz-step-num">2</div>
+      <div class="quiz-step-text">
+        <h4>We Match Your Stack</h4>
+        <p>Cross-references 70+ product combinations to find your fit.</p>
+      </div>
+    </div>
+    <div class="quiz-step">
+      <div class="quiz-step-num">3</div>
+      <div class="quiz-step-text">
+        <h4>Train With Confidence</h4>
+        <p>Get your plan plus an exclusive discount on your first order.</p>
+      </div>
+    </div>
+  </div>
+  <div class="quiz-cta">
+    <a href="/pages/quiz" class="btn btn-gold">Find My Formula →</a>
+    <p class="quiz-note">Takes under 5 minutes. No account required.</p>
+  </div>
+</section>
+
+<!-- ═══ CATEGORIES ═══ -->
+<section class="categories">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Shop by Category</div>
+      <h2 class="section-title">Find Your Formula</h2>
+    </div>
+  </div>
+  <div class="categories-grid">
+    <a href="/collections/performance" class="cat-card">
+      <div class="cat-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/Magnum_Nutraceuticals-Limitless_Pre-Workout_ElectricBlueRazz-F_7da4f4ae-a012-4424-83d2-c1c9192b7283.jpg?v=1775506894&width=400" alt="Pre-Workout" loading="lazy">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-name">Pre-Workout</div>
+        <div class="cat-count">LIMITLESS · MANE BRAIN</div>
+      </div>
+    </a>
+    <a href="/collections/protein" class="cat-card">
+      <div class="cat-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/QuattroChocolateLoveCDN2lbsF_f17de077-31c6-4eee-8904-fd61638a9dff.jpg?v=1775506112&width=400" alt="Protein" loading="lazy">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-name">Protein</div>
+        <div class="cat-count">QUATTRO · ÄRA</div>
+      </div>
+    </a>
+    <a href="/collections/muscle-builders" class="cat-card">
+      <div class="cat-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/Magnum-BigC-r0.01-CDN-F.jpg?v=1775506835&width=400" alt="Muscle Builders" loading="lazy">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-name">Muscle Builders</div>
+        <div class="cat-count">BIG C · Creatine 100</div>
+      </div>
+    </a>
+    <a href="/collections/fat-burners" class="cat-card">
+      <div class="cat-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/Heat-120-CDN-F_1.jpg?v=1775506783&width=400" alt="Fat Burners" loading="lazy">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-name">Fat Burners</div>
+        <div class="cat-count">HEAT · CARNE DIEM</div>
+      </div>
+    </a>
+    <a href="/collections/general-health" class="cat-card">
+      <div class="cat-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/files/Primer_Magnum_CDN_54514d3d-f71a-4b76-9abd-1350d1c7ad71.jpg?v=1775506863&width=400" alt="Vitamins & Health" loading="lazy">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-name">Vitamins &amp; Health</div>
+        <div class="cat-count">PRIMER · REFRSH</div>
+      </div>
+    </a>
+    <a href="/collections/stacks-bundles" class="cat-card">
+      <div class="cat-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/files/Magnum-BeachBodyIgniterStack-2048x2048-01_a95fd5ef-6e4c-46c3-a9c0-e3c1c7cf79b1.jpg?v=1775072723&width=400" alt="Stacks" loading="lazy">
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-name">Stacks &amp; Bundles</div>
+        <div class="cat-count">Save up to 30%</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ BESTSELLERS ═══ -->
+<section class="bestsellers">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Magnum Collection</div>
+      <h2 class="section-title">Best-Sellers</h2>
+    </div>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/Magnum_Nutraceuticals-Limitless_Pre-Workout_ElectricBlueRazz-F_7da4f4ae-a012-4424-83d2-c1c9192b7283.jpg?v=1775506894&width=400" alt="LIMITLESS" loading="lazy">
+        <div class="product-badge-wrap"><span class="badge badge-gold">Best Seller</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">LIMITLESS</div>
+        <div class="product-tagline">Pump-enhancing pre-workout</div>
+        <div class="product-meta">
+          <div class="product-stars"><span class="stars" style="font-size:10px;">★★★★★</span><span>5.0</span></div>
+          <div class="product-price">$64.99</div>
+        </div>
+      </div>
+      <button class="product-atc-btn">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/QuattroChocolateLoveCDN2lbsF_f17de077-31c6-4eee-8904-fd61638a9dff.jpg?v=1775506112&width=400" alt="QUATTRO" loading="lazy">
+        <div class="product-badge-wrap"><span class="badge badge-gold">Best Seller</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">QUATTRO</div>
+        <div class="product-tagline">4-isolate protein blend</div>
+        <div class="product-meta">
+          <div class="product-stars"><span class="stars" style="font-size:10px;">★★★★★</span><span>4.79</span></div>
+          <div class="product-price">$69.99</div>
+        </div>
+      </div>
+      <button class="product-atc-btn">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/files/Primer_Magnum_CDN_54514d3d-f71a-4b76-9abd-1350d1c7ad71.jpg?v=1775506863&width=400" alt="PRIMER" loading="lazy">
+        <div class="product-badge-wrap"><span class="badge badge-gold">Top Rated</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">PRIMER</div>
+        <div class="product-tagline">Athlete vitamin formula</div>
+        <div class="product-meta">
+          <div class="product-stars"><span class="stars" style="font-size:10px;">★★★★★</span><span>4.97</span></div>
+          <div class="product-price">$59.99</div>
+        </div>
+      </div>
+      <button class="product-atc-btn">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/files/Magnum-Creatine100-400g-2048x2048-Front_d0d974a6-7b55-4f41-967d-4b0df57516dd.jpg?v=1775569153&width=400" alt="Creatine 100" loading="lazy">
+        <div class="product-badge-wrap"><span class="badge badge-new">New</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">CREATINE 100</div>
+        <div class="product-tagline">Pure micronized creatine</div>
+        <div class="product-meta">
+          <div class="product-stars"><span class="stars" style="font-size:10px;">★★★★★</span><span>5.0</span></div>
+          <div class="product-price">$26.99</div>
+        </div>
+      </div>
+      <button class="product-atc-btn">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/Heat-120-CDN-F_1.jpg?v=1775506783&width=400" alt="HEAT" loading="lazy">
+        <div class="product-badge-wrap"><span class="badge badge-gold">Best Seller</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">HEAT</div>
+        <div class="product-tagline">Thermogenic fat burner</div>
+        <div class="product-meta">
+          <div class="product-stars"><span class="stars" style="font-size:10px;">★★★★★</span><span>5.0</span></div>
+          <div class="product-price">$49.99</div>
+        </div>
+      </div>
+      <button class="product-atc-btn">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/Magnum_Nutraceuticals_Carne-Diem.jpg?v=1775506908&width=400" alt="CARNE DIEM" loading="lazy">
+        <div class="product-badge-wrap"><span class="badge badge-sale">Sale</span></div>
+      </div>
+      <div class="product-body">
+        <div class="product-name">CARNE DIEM</div>
+        <div class="product-tagline">Stim-free fat mobilizer</div>
+        <div class="product-meta">
+          <div class="product-stars"><span class="stars" style="font-size:10px;">★★★★★</span><span>5.0</span></div>
+          <div class="product-price">$54.99</div>
+        </div>
+      </div>
+      <button class="product-atc-btn">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/Mimic-r1.00-US-60-F.jpg?v=1775507894&width=400" alt="MIMIC" loading="lazy">
+      </div>
+      <div class="product-body">
+        <div class="product-name">MIMIC</div>
+        <div class="product-tagline">Fat loss &amp; recovery</div>
+        <div class="product-meta">
+          <div class="product-stars"><span class="stars" style="font-size:10px;">★★★★★</span><span>5.0</span></div>
+          <div class="product-price">$44.99</div>
+        </div>
+      </div>
+      <button class="product-atc-btn">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <div class="product-img-wrap">
+        <img src="https://magnumsupps.com/cdn/shop/products/Magnum-AfterBurner-US-F.jpg?v=1775507945&width=400" alt="AFTER BURNER" loading="lazy">
+      </div>
+      <div class="product-body">
+        <div class="product-name">AFTER BURNER</div>
+        <div class="product-tagline">Post-workout thermogenic</div>
+        <div class="product-meta">
+          <div class="product-stars"><span class="stars" style="font-size:10px;">★★★★☆</span><span>4.8</span></div>
+          <div class="product-price">$44.99</div>
+        </div>
+      </div>
+      <button class="product-atc-btn">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUNDLE ═══ -->
+<section class="bundle">
+  <div class="section-label">Stack &amp; Save</div>
+  <h2 class="section-title">Build Your Perfect Stack</h2>
+  <p class="section-sub">Pick any 3 products. Save 20% automatically. Subscribe &amp; save 25%.</p>
+  <div class="bundle-save-callout">🔥 Buy Any 2, Get 1 FREE</div>
+  <div class="bundle-steps">
+    <div class="bundle-step">
+      <div class="bundle-step-num">1</div>
+      <div>
+        <h4>Choose Your Goal</h4>
+        <p>Muscle. Fat loss. Performance. Health.</p>
+      </div>
+    </div>
+    <div class="bundle-step">
+      <div class="bundle-step-num">2</div>
+      <div>
+        <h4>Pick Your Products</h4>
+        <p>Select any 3 from 20+ award-winning formulas.</p>
+      </div>
+    </div>
+    <div class="bundle-step">
+      <div class="bundle-step-num">3</div>
+      <div>
+        <h4>Save 20% Instantly</h4>
+        <p>Discount at checkout. Subscribe &amp; save 25%.</p>
+      </div>
+    </div>
+  </div>
+  <div class="bundle-ctas">
+    <a href="/collections/stacks-bundles" class="btn btn-gold">Start Building My Stack →</a>
+    <a href="/collections/stacks-bundles" class="btn btn-outline">Browse Pre-Built Stacks</a>
+  </div>
+</section>
+
+<!-- ═══ SOCIAL PROOF ═══ -->
+<section class="social-proof">
+  <div class="trust-row">
+    <div class="trust-item">
+      <div class="trust-icon">🏆</div>
+      <div class="trust-val">20+ Yrs</div>
+      <div class="trust-lbl">In Business</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">⭐</div>
+      <div class="trust-val">4.97</div>
+      <div class="trust-lbl">Avg Rating</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">✅</div>
+      <div class="trust-val">671+</div>
+      <div class="trust-lbl">Reviews</div>
+    </div>
+  </div>
+  <div class="trust-row" style="background:var(--bg-3);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);margin:-20px var(--pad) 32px;overflow:hidden;display:grid;grid-template-columns:repeat(3,1fr)">
+    <div class="trust-item">
+      <div class="trust-icon">🔬</div>
+      <div class="trust-val">Lab</div>
+      <div class="trust-lbl">Tested</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">🚚</div>
+      <div class="trust-val">Free</div>
+      <div class="trust-lbl">Ship $100+</div>
+    </div>
+    <div class="trust-item" style="border-right:none">
+      <div class="trust-icon">💰</div>
+      <div class="trust-val">30-Day</div>
+      <div class="trust-lbl">Guarantee</div>
+    </div>
+  </div>
+
+  <div class="reviews-header-m">
+    <div class="section-label">Real People. Real Results</div>
+    <h2 class="section-title">What Our Athletes Say</h2>
+    <div class="reviews-score-row">
+      <div class="reviews-score">4.97</div>
+      <div class="reviews-detail">
+        <div class="stars" style="font-size:16px;">★★★★★</div>
+        <p>Based on 671+ verified reviews</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-list">
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Kristie H.</div>
+          <div class="review-product">QUATTRO Protein</div>
+        </div>
+        <span class="stars" style="font-size:14px;">★★★★★</span>
+      </div>
+      <p class="review-text">"Absolutely my favourite protein! The vanilla soft serve is amazing. I've tried everything on the market and nothing comes close."</p>
+      <div class="review-verified">✓ Verified Purchase · March 2025</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">Bryan T.</div>
+          <div class="review-product">LIMITLESS Pre-Workout</div>
+        </div>
+        <span class="stars" style="font-size:14px;">★★★★★</span>
+      </div>
+      <p class="review-text">"Absolutely the best flavor and an amazing pre-workout. My all-time favourite — I've been using it for two years and I won't switch."</p>
+      <div class="review-verified">✓ Verified Purchase · January 2025</div>
+    </div>
+    <div class="review-card">
+      <div class="review-top">
+        <div>
+          <div class="review-name">G.G.</div>
+          <div class="review-product">QUATTRO Protein</div>
+        </div>
+        <span class="stars" style="font-size:14px;">★★★★★</span>
+      </div>
+      <p class="review-text">"Best protein powder on the market, full stop. QUATTRO is the only one worth your money."</p>
+      <div class="review-verified">✓ Verified Purchase · December 2025</div>
+    </div>
+  </div>
+  <div style="padding:20px var(--pad) 0;display:flex;justify-content:center;">
+    <a href="/collections/supplements" class="btn btn-dark btn-sm" style="max-width:280px;">Read All 671+ Reviews</a>
+  </div>
+</section>
+
+<!-- ═══ LOYALTY ═══ -->
+<section class="loyalty">
+  <div class="section-label">Rewards Program</div>
+  <h2 class="section-title">Earn While<br>You Train</h2>
+  <p class="section-sub">Every purchase earns points. Every point gets you closer to free product.</p>
+  <div class="loyalty-visual">
+    <div class="loyalty-badge-icon">🏆</div>
+    <div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:2px;">Magnum Loyalty</div>
+      <div style="font-size:18px;font-weight:900;">CHAMPION STATUS</div>
+    </div>
+    <div class="loyalty-pts-box">
+      <div class="loyalty-pts-label">Your Points Balance</div>
+      <div class="loyalty-pts-val">1,250 pts</div>
+      <div class="loyalty-pts-sub">= $12.50 toward your next order</div>
+    </div>
+    <div style="width:100%;display:flex;flex-direction:column;gap:8px;">
+      <a href="/pages/loyalty" class="btn btn-gold btn-sm">Activate My Rewards</a>
+      <a href="/account" class="btn btn-dark btn-sm">Sign In to Track Points</a>
+    </div>
+  </div>
+  <div class="loyalty-perks">
+    <div class="loyalty-perk">
+      <div class="loyalty-perk-icon">🛒</div>
+      <h4>Earn on Every Order</h4>
+      <p>5 points per $1 spent.</p>
+    </div>
+    <div class="loyalty-perk">
+      <div class="loyalty-perk-icon">👥</div>
+      <h4>Refer Friends</h4>
+      <p>Give $10, get $10.</p>
+    </div>
+    <div class="loyalty-perk">
+      <div class="loyalty-perk-icon">🎂</div>
+      <h4>Birthday Bonus</h4>
+      <p>Double points on your birthday month.</p>
+    </div>
+    <div class="loyalty-perk">
+      <div class="loyalty-perk-icon">⭐</div>
+      <h4>Review &amp; Earn</h4>
+      <p>50 bonus points per review.</p>
+    </div>
+  </div>
+  <div class="loyalty-ctas">
+    <a href="/pages/loyalty" class="btn btn-gold">Join the Program</a>
+  </div>
+  <p class="loyalty-note">Free to join. No minimum purchase required.</p>
+</section>
+
+<!-- ═══ ATHLETES ═══ -->
+<section class="athletes">
+  <div class="section-header">
+    <div>
+      <div class="section-label">Team Magnum</div>
+      <h2 class="section-title">Powered by Champions</h2>
+    </div>
+  </div>
+  <div class="athletes-grid">
+    <div class="athlete-card">
+      <img src="https://magnumsupps.com/cdn/shop/files/Patrick_Dauphin_1.jpg?v=1694458573" alt="Patrick Dauphin" loading="lazy">
+      <div class="athlete-overlay"></div>
+      <div class="athlete-body">
+        <div class="athlete-sport">Bodybuilding</div>
+        <div class="athlete-name">Patrick Dauphin</div>
+        <div class="athlete-handle">@patrick_dauphin</div>
+        <div class="athlete-quote">"The only brand I trust for competition prep."</div>
+      </div>
+    </div>
+    <div class="athlete-card">
+      <img src="https://magnumsupps.com/cdn/shop/files/Heidi_Cannon.jpg?v=1694458535" alt="Heidi Cannon" loading="lazy">
+      <div class="athlete-overlay"></div>
+      <div class="athlete-body">
+        <div class="athlete-sport">Fitness Competitor</div>
+        <div class="athlete-name">Heidi Cannon</div>
+        <div class="athlete-handle">@heidi.cannon.boomboom</div>
+        <div class="athlete-quote">"Real ingredients, real results."</div>
+      </div>
+    </div>
+    <div class="athlete-card">
+      <img src="https://magnumsupps.com/cdn/shop/files/Meredith_Parry.jpg?v=1693504590" alt="Meredith Parry" loading="lazy">
+      <div class="athlete-overlay"></div>
+      <div class="athlete-body">
+        <div class="athlete-sport">Physique Athlete</div>
+        <div class="athlete-name">Meredith Parry</div>
+        <div class="athlete-handle">@legendaryparry_</div>
+        <div class="athlete-quote">"QUATTRO and PRIMER are non-negotiables."</div>
+      </div>
+    </div>
+    <div class="athlete-card">
+      <img src="https://magnumsupps.com/cdn/shop/files/Jaclyn_Cordeiro.jpg?v=1693504593" alt="Jaclyn Cordeiro" loading="lazy">
+      <div class="athlete-overlay"></div>
+      <div class="athlete-body">
+        <div class="athlete-sport">IFBB Pro</div>
+        <div class="athlete-name">Jaclyn Cordeiro</div>
+        <div class="athlete-handle">@jaclyncordeiro</div>
+        <div class="athlete-quote">"Magnum is always in my corner."</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:20px var(--pad) 0;display:flex;justify-content:center;">
+    <a href="/pages/athlete-page" class="btn btn-dark btn-sm" style="max-width:280px;">Meet the Full Team →</a>
+  </div>
+</section>
+
+<!-- ═══ EMAIL CAPTURE ═══ -->
+<section class="email-section">
+  <div class="email-offer-badge">🎁 Exclusive First-Order Offer</div>
+  <div class="section-label">Join the Magnum Family</div>
+  <h2 class="section-title" style="font-size:24px;">Get 15% Off Your First Order</h2>
+  <p class="section-sub" style="text-align:center;">Plus early access to new launches and member-only deals.</p>
+  <div style="margin-top:14px;font-size:12px;color:var(--text-muted);">What's your primary goal?</div>
+  <div class="email-goals">
+    <span class="email-goal-chip active" onclick="toggleGoal(this)">💪 Muscle</span>
+    <span class="email-goal-chip" onclick="toggleGoal(this)">🔥 Fat Loss</span>
+    <span class="email-goal-chip" onclick="toggleGoal(this)">⚡ Performance</span>
+    <span class="email-goal-chip" onclick="toggleGoal(this)">🌿 Health</span>
+  </div>
+  <form class="email-form" onsubmit="handleEmailSubmit(event)">
+    <input class="email-input" type="email" id="emailInput" placeholder="Enter your email address" required>
+    <button class="btn btn-gold" type="submit">Claim My 15% Off</button>
+  </form>
+  <div class="email-success" id="emailSuccess">🎉 You're in! Check your inbox for your 15% off code.</div>
+  <p class="email-fine">No spam. Unsubscribe anytime. Data never sold.</p>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-brand">
+    <img src="https://magnumsupps.com/cdn/shop/files/magnum_logo_black.png?v=1696281610&width=600" alt="Magnum Nutraceuticals">
+    <p class="footer-tagline">Delivering Results Since 2005. Powering champions worldwide.</p>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/MagnumSupps/" class="footer-social" aria-label="Facebook" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/magnumsupps/" class="footer-social" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@MagnumNutraceuticals/videos" class="footer-social" aria-label="YouTube" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#000"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@magnumsupps" class="footer-social" aria-label="TikTok" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.27 8.27 0 0 0 4.84 1.55V6.79a4.86 4.86 0 0 1-1.07-.1z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-newsletter">
+    <p>Newsletter</p>
+    <div class="footer-email-row">
+      <input type="email" placeholder="Your email address">
+      <button>Join</button>
+    </div>
+  </div>
+
+  <div class="footer-accordion">
+    <div class="footer-acc-item" id="fItem1">
+      <div class="footer-acc-trigger" onclick="toggleFooter(1)">
+        Shop
+        <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
+      </div>
+      <div class="footer-acc-body">
+        <ul>
+          <li><a href="/collections/protein">Protein</a></li>
+          <li><a href="/collections/performance">Pre-Workout</a></li>
+          <li><a href="/collections/muscle-builders">Muscle Builders</a></li>
+          <li><a href="/collections/fat-burners">Fat Burners</a></li>
+          <li><a href="/collections/general-health">General Health</a></li>
+          <li><a href="/collections/stacks-bundles">Stacks &amp; Bundles</a></li>
+          <li><a href="/pages/quiz" style="color:var(--accent)">🎯 Take the Quiz</a></li>
+          <li><a href="/pages/loyalty" style="color:var(--accent)">★ Loyalty Program</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-acc-item" id="fItem2">
+      <div class="footer-acc-trigger" onclick="toggleFooter(2)">
+        Goals
+        <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
+      </div>
+      <div class="footer-acc-body">
+        <ul>
+          <li><a href="/collections/muscle-builders">Build Muscle</a></li>
+          <li><a href="/collections/fat-burners">Lose Weight</a></li>
+          <li><a href="/collections/performance">Athletic Performance</a></li>
+          <li><a href="/collections/general-health">General Health</a></li>
+          <li><a href="/blogs/news">Magnum Blog</a></li>
+          <li><a href="/pages/about">Our Story</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-acc-item" id="fItem3">
+      <div class="footer-acc-trigger" onclick="toggleFooter(3)">
+        Support
+        <svg viewBox="0 0 10 6"><path d="M0 0l5 6 5-6z"/></svg>
+      </div>
+      <div class="footer-acc-body">
+        <ul>
+          <li><a href="/pages/about">About Us</a></li>
+          <li><a href="/pages/contact-us">Contact Us</a></li>
+          <li><a href="/policies/refund-policy">Shipping &amp; Returns</a></li>
+          <li><a href="/policies/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/policies/terms-of-service">Terms &amp; Conditions</a></li>
+          <li><a href="/pages/contact-us">Help Center</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Magnum Nutraceuticals. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="/policies/refund-policy">Refund Policy</a>
+      <a href="/policies/privacy-policy">Privacy Policy</a>
+      <a href="/policies/terms-of-service">Terms of Service</a>
+    </div>
+    <div class="payment-icons">
+      <span class="payment-icon">VISA</span>
+      <span class="payment-icon">MC</span>
+      <span class="payment-icon">AMEX</span>
+      <span class="payment-icon">PAYPAL</span>
+      <span class="payment-icon">APPLE PAY</span>
+      <span class="payment-icon">SHOP PAY</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ COOKIE CONSENT ═══ -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <div class="cookie-title"><span class="cookie-title-icon">🍪</span> We use cookies</div>
+  <p class="cookie-desc">We use cookies to enhance your experience, analyze traffic, and serve personalized content. <a href="/policies/privacy-policy">Privacy Policy</a></p>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept All</button>
+    <button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button>
+    <button class="cookie-btn-manage" id="cookieManage">Manage</button>
+  </div>
+</div>
+
+<!-- Cookie Preferences Modal -->
+<div class="cookie-modal-overlay" id="cookieModalOverlay">
+  <div class="cookie-modal" role="dialog" aria-modal="true">
+    <div class="cookie-modal-header">
+      <div class="cookie-modal-title">Cookie Preferences</div>
+      <button class="cookie-modal-close" id="cookieModalClose">×</button>
+    </div>
+    <div class="cookie-modal-body">
+      <div class="cookie-pref">
+        <div class="cookie-pref-info">
+          <h4>Essential Cookies</h4>
+          <p>Required for the site to function. Powers cart, checkout, and security.</p>
+        </div>
+        <label class="cookie-toggle cookie-toggle-disabled">
+          <input type="checkbox" checked disabled>
+          <div class="cookie-toggle-track"></div>
+          <div class="cookie-toggle-thumb"></div>
+        </label>
+      </div>
+      <div class="cookie-pref">
+        <div class="cookie-pref-info">
+          <h4>Analytics Cookies</h4>
+          <p>Help us improve the site by understanding how it's used.</p>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="prefAnalytics" checked>
+          <div class="cookie-toggle-track"></div>
+          <div class="cookie-toggle-thumb"></div>
+        </label>
+      </div>
+      <div class="cookie-pref">
+        <div class="cookie-pref-info">
+          <h4>Marketing Cookies</h4>
+          <p>Used to deliver personalized ads and track campaign performance.</p>
+        </div>
+        <label class="cookie-toggle">
+          <input type="checkbox" id="prefMarketing" checked>
+          <div class="cookie-toggle-track"></div>
+          <div class="cookie-toggle-thumb"></div>
+        </label>
+      </div>
+    </div>
+    <div class="cookie-modal-footer">
+      <button class="cookie-btn cookie-btn-reject" id="cookieSavePrefs">Save</button>
+      <button class="cookie-btn cookie-btn-accept" id="cookieAcceptAll">Accept All</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ STICKY BOTTOM BAR ═══ -->
+<div class="sticky-bar">
+  <a href="/pages/quiz" class="btn btn-outline">Find My Stack</a>
+  <a href="/collections/supplements" class="btn btn-gold">Shop Now</a>
+</div>
+
+<!-- ═══ JS ═══ -->
+<script>
+// ════════════════════════════════════════════════════════════
+//  PROMO CONFIG — same as desktop, edit here to update
+// ════════════════════════════════════════════════════════════
+const PROMO = {
+  theme:       'gold',
+  tag:         'Limited Time',
+  icon:        './quattro-transparent.png',
+  headline:    'Buy Any 2, Get <em>1 FREE</em> — Stack &amp; Save This Summer',
+  sub:         'Mix and match across all 20+ formulas. Auto-applied at checkout.',
+  cta:         { label: 'Shop the Deal →', href: '/collections/stacks-bundles' },
+  secondary:   { label: 'See eligible products', href: '/collections/supplements' },
+  endsAt:      '2026-06-30T23:59:59',
+  dismissible: true,
+};
+// ════════════════════════════════════════════════════════════
+
+(function initPromo() {
+  const strip = document.getElementById('promoStrip');
+  const dismiss = document.getElementById('promoDismiss');
+  const storageKey = 'promo_dismissed_' + PROMO.endsAt;
+
+  if (PROMO.dismissible && localStorage.getItem(storageKey)) {
+    strip.style.display = 'none';
+    return;
+  }
+
+  strip.classList.add('theme-' + PROMO.theme);
+
+  const iconEl = document.getElementById('promoIcon');
+  if (/^(http|\/|\.|file:)/.test(PROMO.icon) || /\.(png|jpe?g|webp|avif|gif|svg)$/i.test(PROMO.icon)) {
+    const img = document.createElement('img');
+    img.src = PROMO.icon;
+    img.alt = 'Promo product';
+    img.className = 'promo-img';
+    iconEl.appendChild(img);
+  } else {
+    iconEl.innerHTML = '<div class="promo-img-emoji">' + PROMO.icon + '</div>';
+  }
+
+  document.getElementById('promoTag').textContent = PROMO.tag;
+  document.getElementById('promoHeadline').innerHTML = PROMO.headline;
+  document.getElementById('promoSub').textContent = PROMO.sub;
+
+  const btn = document.getElementById('promoBtn');
+  btn.textContent = PROMO.cta.label;
+  btn.href = PROMO.cta.href;
+  btn.className = 'btn ' + (PROMO.theme === 'fire' ? 'btn-sale' : PROMO.theme === 'ice' ? 'btn-new' : 'btn-gold');
+
+  const sec = document.getElementById('promoSecondary');
+  if (PROMO.secondary) {
+    sec.textContent = PROMO.secondary.label;
+    sec.onclick = () => { window.location.href = PROMO.secondary.href; };
+  } else {
+    sec.style.display = 'none';
+  }
+
+  if (!PROMO.dismissible) dismiss.style.display = 'none';
+  dismiss.addEventListener('click', () => {
+    strip.style.transition = 'max-height .4s ease, opacity .3s ease, padding .4s ease';
+    strip.style.maxHeight = strip.scrollHeight + 'px';
+    requestAnimationFrame(() => {
+      strip.style.maxHeight = '0';
+      strip.style.opacity = '0';
+      strip.style.padding = '0';
+      strip.style.overflow = 'hidden';
+    });
+    if (PROMO.endsAt) localStorage.setItem(storageKey, '1');
+  });
+
+  if (PROMO.endsAt) {
+    const wrap = document.getElementById('promoCountdownWrap');
+    wrap.style.display = 'inline-flex';
+    const end = new Date(PROMO.endsAt).getTime();
+    function tick() {
+      const diff = end - Date.now();
+      if (diff <= 0) { wrap.style.display = 'none'; return; }
+      document.getElementById('cdH').textContent = String(Math.floor(diff / 3600000)).padStart(2, '0');
+      document.getElementById('cdM').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      document.getElementById('cdS').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+})();
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+function toggleMobileItem(id) {
+  document.getElementById('mItem' + id).classList.toggle('open');
+}
+
+// Footer accordion
+function toggleFooter(id) {
+  document.getElementById('fItem' + id).classList.toggle('open');
+}
+
+// Email goal chips
+function toggleGoal(el) {
+  el.parentElement.querySelectorAll('.email-goal-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Email submit
+function handleEmailSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById('emailInput');
+  const success = document.getElementById('emailSuccess');
+  if (input.value && input.validity.valid) {
+    input.closest('.email-form').style.display = 'none';
+    success.style.display = 'block';
+  }
+}
+
+// Hero fade-in
+(function() {
+  const hero = document.getElementById('heroText');
+  if (!hero) return;
+  hero.style.opacity = '0';
+  hero.style.transform = 'translateY(20px)';
+  hero.style.transition = 'opacity .7s ease, transform .7s ease';
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    hero.style.opacity = '1';
+    hero.style.transform = 'translateY(0)';
+  }));
+})();
+
+// Cookie consent
+(function initCookieConsent() {
+  const COOKIE_KEY = 'magnum_cookie_consent';
+  if (localStorage.getItem(COOKIE_KEY)) return;
+
+  const banner  = document.getElementById('cookieBanner');
+  const overlay = document.getElementById('cookieModalOverlay');
+
+  setTimeout(() => banner.classList.add('visible'), 800);
+
+  function dismiss(analytics, marketing) {
+    localStorage.setItem(COOKIE_KEY, JSON.stringify({ analytics, marketing, ts: Date.now() }));
+    banner.classList.remove('visible');
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('cookieAccept').addEventListener('click', () => dismiss(true, true));
+  document.getElementById('cookieReject').addEventListener('click', () => dismiss(false, false));
+  document.getElementById('cookieManage').addEventListener('click', () => {
+    overlay.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('cookieModalClose').addEventListener('click', () => {
+    overlay.classList.remove('visible');
+    document.body.style.overflow = '';
+  });
+  document.getElementById('cookieAcceptAll').addEventListener('click', () => dismiss(true, true));
+  document.getElementById('cookieSavePrefs').addEventListener('click', () => {
+    dismiss(
+      document.getElementById('prefAnalytics').checked,
+      document.getElementById('prefMarketing').checked
+    );
+  });
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) {
+      overlay.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+  });
+})();
+
+// Intersection observer
+(function() {
+  if (!('IntersectionObserver' in window)) return;
+  const els = document.querySelectorAll('.product-card, .athlete-card, .review-card, .bundle-step, .loyalty-perk, .cat-card');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  els.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity .45s ease, transform .45s ease';
+    obs.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
