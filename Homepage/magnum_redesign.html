@@ -13,6 +13,7 @@
   --color-background: #F9F8F4;
   --color-secondary:  #000000;
   --color-tertiary:   #072EAA;
+  --color-section-contrast: #ECEBE6;
   --bg:          var(--color-background);
   --bg-2:        var(--color-background);
   --bg-3:        var(--color-background);
@@ -63,10 +64,10 @@ input{font-family:var(--font)}
 
 /* ═══ PROMO STRIP ═══ */
 .promo-strip{position:relative;overflow:hidden;padding:48px 0;border-bottom:1px solid var(--border)}
-.promo-strip.theme-gold{background:var(--color-background)}
-.promo-strip.theme-fire{background:var(--color-background)}
-.promo-strip.theme-ice{background:var(--color-background)}
-.promo-strip.theme-dark{background:var(--bg-2)}
+.promo-strip.theme-gold{background:var(--color-section-contrast)}
+.promo-strip.theme-fire{background:var(--color-section-contrast)}
+.promo-strip.theme-ice{background:var(--color-section-contrast)}
+.promo-strip.theme-dark{background:var(--color-section-contrast)}
 .promo-strip-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:300px;pointer-events:none;border-radius:50%}
 .theme-gold .promo-strip-glow{background:radial-gradient(ellipse,rgba(7,46,170,0.12) 0%,transparent 70%)}
 .theme-fire .promo-strip-glow{background:radial-gradient(ellipse,rgba(7,46,170,0.12) 0%,transparent 70%)}
@@ -175,7 +176,7 @@ input{font-family:var(--font)}
 .hero{position:relative;min-height:90vh;display:flex;align-items:center;overflow:hidden;background:var(--bg)}
 .hero-bg{position:absolute;inset:0;background:var(--color-background)}
 .hero-glow{position:absolute;top:-20%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(7,46,170,0.12) 0%,transparent 70%);pointer-events:none}
-.hero-product-img{position:absolute;right:0;top:50%;transform:translateY(-50%);width:55%;height:110%;object-fit:cover;object-position:center;opacity:.7}
+.hero-product-img{position:absolute;right:0;top:50%;transform:translateY(-50%);width:55%;height:110%;object-fit:cover;object-position:center;opacity:1;mix-blend-mode:multiply}
 .hero-content{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:120px 24px;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:90vh}
 .hero-text{max-width:600px}
 .hero-trust{display:flex;align-items:center;gap:8px;margin-bottom:24px}
