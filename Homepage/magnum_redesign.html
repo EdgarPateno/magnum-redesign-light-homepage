@@ -1593,5 +1593,234 @@ function handleEmailSubmit(e) {
   });
 })();
 </script>
+
+<!-- ═══ FIND MY FORMULA — QUIZ MODAL (MVP) ═══ -->
+<style>
+.qz-overlay{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .25s}
+.qz-overlay.open{opacity:1;visibility:visible}
+.qz-modal{position:relative;width:100%;max-width:680px;max-height:92vh;display:flex;flex-direction:column;overflow:hidden;background:var(--color-background,#f9f8f4);border:1px solid var(--border,rgba(0,0,0,.12));border-radius:var(--r-lg,16px);box-shadow:0 24px 64px rgba(0,0,0,.35);transform:translateY(12px) scale(.98);transition:transform .25s;font-family:var(--font,'Inter',sans-serif)}
+.qz-overlay.open .qz-modal{transform:none}
+.qz-head{display:flex;align-items:center;gap:16px;padding:18px 22px;border-bottom:1px solid var(--border,rgba(0,0,0,.12))}
+.qz-progress{flex:1;height:6px;border-radius:99px;background:rgba(0,0,0,.08);overflow:hidden}
+.qz-progress-bar{height:100%;width:20%;background:var(--accent,#072eaa);border-radius:99px;transition:width .3s}
+.qz-step-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted,rgba(0,0,0,.68));white-space:nowrap}
+.qz-close{width:36px;height:36px;border:0;background:transparent;font-size:26px;line-height:1;color:var(--text-muted,rgba(0,0,0,.68));cursor:pointer;border-radius:8px}
+.qz-close:hover{background:rgba(0,0,0,.06);color:#000}
+.qz-body{padding:30px 22px 26px;overflow-y:auto}
+.qz-eyebrow{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent,#072eaa);margin-bottom:10px}
+.qz-q{font-size:24px;font-weight:900;line-height:1.15;margin:0 0 22px;color:#000}
+.qz-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.qz-opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;padding:16px;border:1.5px solid var(--border,rgba(0,0,0,.12));border-radius:12px;background:#fff;cursor:pointer;font-size:14px;font-weight:600;color:#000;transition:.15s;font-family:inherit}
+.qz-opt:hover{border-color:var(--accent,#072eaa);background:rgba(7,46,170,.04)}
+.qz-opt.sel{border-color:var(--accent,#072eaa);background:rgba(7,46,170,.08);box-shadow:0 0 0 1px var(--accent,#072eaa) inset}
+.qz-opt-emoji{font-size:22px;line-height:1;flex-shrink:0}
+.qz-nav{display:flex;align-items:center;justify-content:space-between;margin-top:22px}
+.qz-back{border:0;background:transparent;color:var(--text-muted,rgba(0,0,0,.68));font-size:13px;font-weight:700;cursor:pointer;padding:8px;font-family:inherit}
+.qz-back[hidden]{visibility:hidden;display:inline-block}
+.qz-foot-note{font-size:12px;color:var(--text-muted,rgba(0,0,0,.68))}
+.qz-results{display:none}
+.qz-results.show{display:block}
+.qz-results-head{text-align:center}
+.qz-results-eyebrow{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent,#072eaa)}
+.qz-results-title{font-size:26px;font-weight:900;margin:8px 0 4px;color:#000}
+.qz-results-sub{font-size:13px;color:var(--text-muted,rgba(0,0,0,.68));margin:0 auto 20px;text-align:center;max-width:42ch}
+.qz-stack{display:flex;flex-direction:column;gap:12px;margin-bottom:18px}
+.qz-card{display:flex;gap:14px;align-items:center;padding:12px;border:1px solid var(--border,rgba(0,0,0,.12));border-radius:12px;background:#fff}
+.qz-card img{width:60px;height:60px;object-fit:contain;border-radius:8px;background:#f4f3ef;flex-shrink:0}
+.qz-card-role{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent,#072eaa)}
+.qz-card-name{font-size:15px;font-weight:800;color:#000;margin:2px 0}
+.qz-card-why{font-size:12px;color:var(--text-muted,rgba(0,0,0,.68))}
+.qz-card-price{margin-left:auto;font-size:15px;font-weight:800;color:var(--accent,#072eaa);white-space:nowrap}
+.qz-cta{display:block;width:100%;text-align:center;padding:16px;border:0;border-radius:10px;background:var(--accent,#072eaa);color:#fff;font-size:14px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+.qz-cta:hover{background:#061f7a}
+.qz-email{display:flex;gap:8px;margin-top:14px}
+.qz-email input{flex:1;padding:13px 14px;border:1px solid var(--border,rgba(0,0,0,.12));border-radius:10px;font-size:14px;outline:none;font-family:inherit}
+.qz-email input:focus{border-color:var(--accent,#072eaa)}
+.qz-email button{padding:0 18px;border:0;border-radius:10px;background:#000;color:#fff;font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.qz-email-note{font-size:11px;color:var(--text-muted,rgba(0,0,0,.68));text-align:center;margin-top:8px}
+.qz-email-success{display:none;margin-top:12px;padding:12px;border-radius:10px;background:rgba(7,46,170,.08);border:1px solid rgba(7,46,170,.3);color:var(--accent,#072eaa);font-weight:700;font-size:13px;text-align:center}
+.qz-restart{display:block;width:100%;text-align:center;background:none;border:0;margin-top:14px;color:var(--text-muted,rgba(0,0,0,.68));font-size:12px;font-weight:700;text-decoration:underline;cursor:pointer;font-family:inherit}
+@media(max-width:600px){.qz-options{grid-template-columns:1fr}.qz-q{font-size:20px}.qz-overlay{padding:0}.qz-modal{max-width:none;max-height:100%;height:100%;border-radius:0}}
+</style>
+
+<div class="qz-overlay" id="qzOverlay" aria-hidden="true">
+  <div class="qz-modal" role="dialog" aria-modal="true" aria-label="Find My Formula quiz">
+    <div class="qz-head">
+      <div class="qz-progress"><div class="qz-progress-bar" id="qzBar"></div></div>
+      <span class="qz-step-label" id="qzStepLabel">Question 1 of 5</span>
+      <button class="qz-close" id="qzClose" aria-label="Close quiz">&times;</button>
+    </div>
+    <div class="qz-body">
+      <div id="qzQuiz">
+        <div class="qz-eyebrow">Find My Formula</div>
+        <h3 class="qz-q" id="qzQuestion"></h3>
+        <div class="qz-options" id="qzOptions"></div>
+        <div class="qz-nav">
+          <button class="qz-back" id="qzBack" hidden>&larr; Back</button>
+          <span class="qz-foot-note">~2 min &middot; no account needed</span>
+        </div>
+      </div>
+      <div class="qz-results" id="qzResults">
+        <div class="qz-results-head">
+          <div class="qz-results-eyebrow">Your Personalized Stack</div>
+          <h3 class="qz-results-title">Built For Your Goal</h3>
+        </div>
+        <p class="qz-results-sub" id="qzResultsSub"></p>
+        <div class="qz-stack" id="qzStack"></div>
+        <a class="qz-cta" id="qzAddStack" href="https://magnumsupps.com/collections/supplements">Shop My Stack &mdash; 15% Off First Order</a>
+        <form class="qz-email" id="qzEmailForm">
+          <input type="email" id="qzEmail" placeholder="Email me my results" required>
+          <button type="submit">Unlock 15%</button>
+        </form>
+        <div class="qz-email-note">Get your plan + an exclusive first-order discount. No spam.</div>
+        <div class="qz-email-success" id="qzEmailSuccess">&#10003; Sent! Check your inbox for your stack &amp; discount code.</div>
+        <button class="qz-restart" id="qzRestart">&#8635; Retake the quiz</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var QUESTIONS=[
+    {q:"What's your #1 goal right now?",options:[
+      {label:"Build Muscle",emoji:"💪",w:{muscle:3,strength:2,protein:2}},
+      {label:"Burn Fat",emoji:"🔥",w:{fatloss:3,energy:2}},
+      {label:"Boost Performance",emoji:"⚡",w:{performance:3,energy:2,pumps:2}},
+      {label:"Improve Health & Recovery",emoji:"🌿",w:{health:3,recovery:2}}
+    ]},
+    {q:"How often do you train?",options:[
+      {label:"5+ days a week",emoji:"🏆",w:{strength:1,recovery:1}},
+      {label:"3–4 days a week",emoji:"📅",w:{performance:1}},
+      {label:"1–2 days a week",emoji:"🚶",w:{energy:1}},
+      {label:"Just getting started",emoji:"🌱",w:{health:1}}
+    ]},
+    {q:"Where do you need the most help?",options:[
+      {label:"Energy & focus before training",emoji:"⚡",w:{energy:2,focus:2,preworkout:2}},
+      {label:"Strength & pumps during lifts",emoji:"🏋️",w:{strength:2,pumps:2}},
+      {label:"Recovery & soreness after",emoji:"🛌",w:{recovery:2,protein:1}},
+      {label:"Everyday nutrition & wellness",emoji:"🥗",w:{health:2}}
+    ]},
+    {q:"What matters most in your supplements?",options:[
+      {label:"Clean, transparent labels",emoji:"🔬",w:{}},
+      {label:"Plant-based friendly",emoji:"🌿",w:{recovery:1,health:1}},
+      {label:"Maximum-strength formulas",emoji:"💥",w:{strength:2,muscle:1}},
+      {label:"No strong preference",emoji:"🤷",w:{}}
+    ]},
+    {q:"How experienced are you with supplements?",options:[
+      {label:"New — keep it simple",emoji:"🌟",w:{},flag:{stack:2}},
+      {label:"Some experience",emoji:"📈",w:{},flag:{stack:3}},
+      {label:"Advanced — I stack multiple",emoji:"🧠",w:{performance:1},flag:{stack:3}}
+    ]}
+  ];
+  var PRODUCTS=[
+    {name:"LIMITLESS",role:"Pre-Workout",img:"https://magnumsupps.com/cdn/shop/products/Magnum_Nutraceuticals-Limitless_Pre-Workout_ElectricBlueRazz-F_7da4f4ae-a012-4424-83d2-c1c9192b7283.jpg?v=1775506894&width=200",tags:["energy","performance","pumps","preworkout","focus"],price:"$64.99"},
+    {name:"QUATTRO",role:"Protein",img:"https://magnumsupps.com/cdn/shop/products/QuattroChocolateLoveCDN2lbsF_f17de077-31c6-4eee-8904-fd61638a9dff.jpg?v=1775506112&width=200",tags:["muscle","recovery","protein"],price:"$69.99"},
+    {name:"BIG C",role:"Creatine",img:"https://magnumsupps.com/cdn/shop/products/Magnum-BigC-r0.01-CDN-F.jpg?v=1775506835&width=200",tags:["muscle","strength"],price:"$39.99"},
+    {name:"HEAT ACCELERATED",role:"Fat Burner",img:"https://magnumsupps.com/cdn/shop/products/Heat-120-CDN-F_1.jpg?v=1775506783&width=200",tags:["fatloss","energy"],price:"$44.99"},
+    {name:"PRIMER",role:"Daily Vitamins",img:"https://magnumsupps.com/cdn/shop/files/Primer_Magnum_CDN_54514d3d-f71a-4b76-9abd-1350d1c7ad71.jpg?v=1775506863&width=200",tags:["health","recovery"],price:"$49.99"},
+    {name:"MIMIC",role:"Nutrient Partitioner",img:"https://magnumsupps.com/cdn/shop/products/Mimic-r1.00-US-60-F.jpg?v=1775507894&width=200",tags:["muscle","fatloss","recovery"],price:"$44.99"}
+  ];
+  var REASONS={muscle:"Supports muscle growth",strength:"Boosts strength & power",protein:"Hits your protein targets",recovery:"Speeds up recovery",fatloss:"Helps you burn fat",energy:"Clean energy to train harder",performance:"Elevates training performance",pumps:"Bigger pumps in the gym",focus:"Sharper focus & drive",preworkout:"Primes you pre-workout",health:"Daily health foundation"};
+
+  var ov=document.getElementById('qzOverlay'); if(!ov) return;
+  var bar=document.getElementById('qzBar'), stepLabel=document.getElementById('qzStepLabel');
+  var qEl=document.getElementById('qzQuestion'), optsEl=document.getElementById('qzOptions');
+  var backBtn=document.getElementById('qzBack'), quizEl=document.getElementById('qzQuiz'), resEl=document.getElementById('qzResults');
+  var answers=[], current=0, scores={}, stackSize=3, advTimer=null;
+
+  function recompute(){
+    scores={}; stackSize=3;
+    answers.forEach(function(idx,qi){
+      if(idx==null) return;
+      var opt=QUESTIONS[qi].options[idx];
+      for(var t in opt.w){scores[t]=(scores[t]||0)+opt.w[t];}
+      if(opt.flag&&opt.flag.stack) stackSize=opt.flag.stack;
+    });
+  }
+  function render(){
+    quizEl.style.display=''; resEl.classList.remove('show');
+    var q=QUESTIONS[current];
+    qEl.textContent=q.q;
+    stepLabel.textContent='Question '+(current+1)+' of '+QUESTIONS.length;
+    bar.style.width=((current+1)/QUESTIONS.length*100)+'%';
+    backBtn.hidden = current===0;
+    optsEl.innerHTML='';
+    q.options.forEach(function(opt,i){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='qz-opt'+(answers[current]===i?' sel':'');
+      b.innerHTML='<span class="qz-opt-emoji">'+opt.emoji+'</span><span>'+opt.label+'</span>';
+      b.addEventListener('click',function(){choose(i);});
+      optsEl.appendChild(b);
+    });
+  }
+  function choose(i){
+    answers[current]=i; recompute();
+    Array.prototype.forEach.call(optsEl.children,function(c,idx){c.classList.toggle('sel',idx===i);});
+    clearTimeout(advTimer);
+    advTimer=setTimeout(function(){
+      if(current<QUESTIONS.length-1){current++;render();}
+      else{showResults();}
+    },280);
+  }
+  backBtn.addEventListener('click',function(){if(current>0){current--;render();}});
+
+  function showResults(){
+    recompute();
+    var scored=PRODUCTS.map(function(p,idx){
+      var s=0,best=null,bestv=-1;
+      p.tags.forEach(function(t){var v=scores[t]||0; s+=v; if(v>bestv){bestv=v;best=t;}});
+      return {p:p,s:s,best:best,idx:idx};
+    });
+    scored.sort(function(a,b){return b.s-a.s || a.idx-b.idx;});
+    var pick=scored.slice(0,stackSize);
+    var stackEl=document.getElementById('qzStack'); stackEl.innerHTML='';
+    pick.forEach(function(r){
+      var why=REASONS[r.best]||REASONS[r.p.tags[0]]||'A great fit for your goals';
+      var c=document.createElement('div'); c.className='qz-card';
+      c.innerHTML='<img src="'+r.p.img+'" alt="'+r.p.name+'" loading="lazy">'
+        +'<div><div class="qz-card-role">'+r.p.role+'</div>'
+        +'<div class="qz-card-name">'+r.p.name+'</div>'
+        +'<div class="qz-card-why">'+why+'</div></div>'
+        +'<div class="qz-card-price">'+r.p.price+'</div>';
+      stackEl.appendChild(c);
+    });
+    var goals=['build muscle','burn fat','boost performance','improve your health & recovery'];
+    var gi=answers[0]!=null?answers[0]:0;
+    document.getElementById('qzResultsSub').textContent='Based on your goal to '+goals[gi]+', here’s the stack we’d start you on.';
+    quizEl.style.display='none'; resEl.classList.add('show');
+    bar.style.width='100%'; stepLabel.textContent='Your results';
+  }
+
+  document.getElementById('qzEmailForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    this.style.display='none';
+    document.getElementById('qzEmailSuccess').style.display='block';
+  });
+  document.getElementById('qzRestart').addEventListener('click',function(){
+    answers=[];current=0;recompute();
+    document.getElementById('qzEmailForm').style.display='';
+    document.getElementById('qzEmailSuccess').style.display='none';
+    render();
+  });
+
+  function openQuiz(){
+    var mm=document.getElementById('mobileMenu'); if(mm)mm.classList.remove('open');
+    var hb=document.getElementById('hamburger'); if(hb)hb.classList.remove('open');
+    ov.classList.add('open'); ov.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+  }
+  function closeQuiz(){ ov.classList.remove('open'); ov.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  document.getElementById('qzClose').addEventListener('click',closeQuiz);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeQuiz();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ov.classList.contains('open'))closeQuiz();});
+
+  document.querySelectorAll('a[href="/pages/quiz"], [data-quiz-open]').forEach(function(el){
+    el.addEventListener('click',function(e){e.preventDefault();openQuiz();});
+  });
+
+  render();
+})();
+</script>
 </body>
 </html>
